@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP1 Starter</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  <script src="https://use.fontawesome.com/da0b9c6653.js"></script>
+</head>
+
+<body>
+
+  <div class="navBar" id="nav">
+
+    <div id="header"> HAO'S PORTFOLIO </div>
+    <div id="section">
+      <div id="info">infomation</div>
+      <div id="proj">projects</div>
+      <div id="fav">favorites</div>
+      <div id="contact">contact</div>
+    </div>
+
+  </div>
+
+  <div class="placeHolder">
+
+  </div>
+
+  <div class="mainContent" id="main">
+    <div class="fixedBg"> </div>
+    <div class="infoSession" id="infoArea">
+      <div>
+        <div class="cardWrapper">
+
+          <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAiMAAAAJDFiYTBiZTE1LTE4ZWItNDZlMS1hYWIxLTBhNDc3OTNhYzQyNA.jpg" class="pic"/>
+          <h1>
+            Hao Zhang
+            <span>
+            <!-- <a href="https://codepen.io/lucian33">
+              <img src="https://blog.codepen.io/wp-content/uploads/2012/06/codepen-wordmark-display-inside-black@10x.png"/>
+            </a> -->
+            </span>
+          </h1>
+        </div>
+
+
+        <div class="bio">
+          <!-- <h2>B i o g r a p h y</h2> -->
+          <h2>Biography</h2>
+          <div class="br"> </div>
+          <h3>Self-Motivated. Detail-Driven. Innovative.</h3>
+          <p>I am currently a graduate student majored in GIS at UIUC. Believing in programming is the closest thing we have to magic, and driven by my passion in web development. I am experienced as a programmer and equipped with technologies such as AngularJS, NodeJS, WebGL, Three.js and jQuery, etc.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="multiColumn" id="projArea">
+      <div class="projectText">
+        <h1>PROJECTS</h1>
+      </div>
+      <div class="projectCards">
+        <div id="proj1">
+          <div class="flipper">
+            <div class="front" onclick="void(0)">
+
+            </div>
+            <div class="back">
+
+            </div>
+          </div>
+        </div>
+        <div id="proj2">
+          <div class="flipper">
+            <div class="front">
+
+            </div>
+            <div class="back">
+
+            </div>
+          </div>
+        </div>
+        <div id="proj3">
+          <!-- <iframe src="https://lucian33.github.io/THREE.JS-DeformableObject/"></iframe> -->
+          <div class="flipper">
+            <div class="front">
+
+            </div>
+            <div class="back">
+
+            </div>
+          </div>
+        </div>
+        <div id="proj4">
+          <div class="flipper">
+            <div class="front">
+
+            </div>
+            <div class="back">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Modals for projects -->
+    <div class="modal" id="proj1Modal">
+      <div>
+        <div class="content">
+          <!-- differnt rows for modal -->
+          <div class="close">
+              x
+          </div>
+          <div class="projName">
+            <h1>Project</h1>
+          </div>
+          <div class="projDetail">
+            <p>Details</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="favorites" id="favArea">
+      <div class="carouselWrapper">
+        <div class="slides">
+          <div >
+            <video src="assets/cloud.mp4" autoplay muted loop>
+
+            </video>
+          </div>
+          <div>
+
+          </div>
+          <div>
+
+          </div>
+          <div>
+
+          </div>
+        </div>
+        <div class="prev">
+          <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="next">
+          <i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacts" id="contactArea">
+      <div>
+        <div>
+          <h1>Contact Me</h1>
+        </div>
+        <div id="form">
+          <div>
+              <form name="sentMessage" id="contactForm" novalidate="">
+                <div>
+                  <div>
+                    <h3>Name</h3>
+                    <input class="form-control" id="name" type="text" placeholder="Name" >
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <h3>Email Address</h3>
+                    <input class="form-control" id="email" type="email" placeholder="Email Address" >
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <h3>Phone Number</h3>
+                    <input class="form-control" id="phone" type="tel" placeholder="Phone Number">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <h3>Message</h3>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Message">
+                    </textarea>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <button type="submit" id="sendMessage"><i class="fa fa-paper-plane fa-3x" aria-hidden="true"></i></button>
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer" >
+    <div class="location">
+      <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+      <h1>Location</h1>
+      <h2>1329 North Lincoln Ave</h2>
+      <h2>Urbana, IL 61801</h2>
+    </div>
+
+    <div class="social">
+      <a href="https://codepen.io/lucian33">
+        <i class="fa fa-codepen fa-3x" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/hao-zhang/">
+        <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/lucian33">
+        <i class="fa fa-github-alt fa-3x" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="email">
+      <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
+      <h1>Emails</h1>
+      <h2>lucian19602@gmail.com</h2>
+      <h2>haoz2@illinois.edu</h2>
+    </div>
+
+  </div>
+
+
+
+  <script src="bundle.js" type="text/javascript"></script>
+</body>
+
+</html>
