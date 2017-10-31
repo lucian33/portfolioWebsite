@@ -3,7 +3,13 @@ html, body {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: roboto; }
+  font-family: roboto;
+  font-size: 14px; }
+
+.sepLine {
+  height: 1px;
+  color: black;
+  width: 100%; }
 
 .navBar {
   z-index: 1;
@@ -120,9 +126,6 @@ html, body {
     -webkit-animation: wordEase 1s ease;
     animation: wordEase 1s ease;
     background-color: rgba(255, 255, 255, 0.2); }
-    .infoSession .bio .br {
-      height: 1px;
-      color: grey; }
     .infoSession .bio h2 {
       -webkit-animation-delay: 1s;
       margin: 2px; }
@@ -136,19 +139,34 @@ html, body {
       min-width: 350px; }
 
 .main-carousel {
-  background-color: ghostWhite;
-  height: 40vh; }
+  color: black;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 5px; }
   .main-carousel .carousel-cell {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     min-width: 350px;
-    height: 100%;
-    width: 80%; }
+    min-height: 35vh;
+    width: 90%;
+    padding: 15px; }
+    .main-carousel .carousel-cell .br {
+      width: 50%;
+      height: 3px;
+      background-color: pink; }
+    .main-carousel .carousel-cell .header {
+      font-size: 2rem;
+      align-self: flex-start; }
     .main-carousel .carousel-cell .desc {
       display: flex;
-      justify-content: space-around; }
+      font-size: 1.2rem;
+      align-items: flex-start;
+      justify-content: space-between; }
+      .main-carousel .carousel-cell .desc div {
+        flex: 1; }
+      .main-carousel .carousel-cell .desc span {
+        color: grey; }
 
 .br {
   min-height: 1px;
