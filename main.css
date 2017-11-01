@@ -136,7 +136,8 @@ html, body {
       -webkit-animation-delay: 3s;
       text-align: left;
       width: 50%;
-      min-width: 350px; }
+      min-width: 350px;
+      font-size: 1.2rem; }
 
 .main-carousel {
   color: black;
@@ -147,9 +148,8 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-width: 350px;
     min-height: 35vh;
-    width: 90%;
+    width: 85%;
     padding: 15px; }
     .main-carousel .carousel-cell .br {
       width: 50%;
@@ -162,9 +162,8 @@ html, body {
       display: flex;
       font-size: 1.2rem;
       align-items: flex-start;
-      justify-content: space-between; }
-      .main-carousel .carousel-cell .desc div {
-        flex: 1; }
+      justify-content: space-between;
+      flex-wrap: wrap; }
       .main-carousel .carousel-cell .desc span {
         color: grey; }
 
@@ -216,6 +215,7 @@ html, body {
         width: 100%; }
       .multiColumn > div div.front, .multiColumn > div div .back {
         backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         position: absolute;
         top: 0;
         left: 0;
@@ -312,8 +312,7 @@ html, body {
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         border-radius: 50%;
-        background-color: #fb9a9a;
-        color: grey;
+        color: #fb9a9a;
         cursor: pointer; }
 
 .favorites {
