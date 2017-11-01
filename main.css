@@ -34,7 +34,7 @@ html, body {
     margin: 5px;
     font-family: 'Libre Barcode 128 Text', cursive; }
   .navBar #section {
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -137,7 +137,7 @@ html, body {
       text-align: left;
       width: 50%;
       min-width: 350px;
-      font-size: 1.2rem; }
+      font-size: 1.4rem; }
 
 .main-carousel {
   color: black;
@@ -148,14 +148,15 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 35vh;
-    width: 85%;
+    min-height: 45vh;
+    width: 75%;
     padding: 15px; }
     .main-carousel .carousel-cell .br {
       width: 50%;
       height: 3px;
       background-color: pink; }
     .main-carousel .carousel-cell .header {
+      font-weight: bold;
       font-size: 2rem;
       align-self: flex-start; }
     .main-carousel .carousel-cell .desc {
@@ -164,8 +165,24 @@ html, body {
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap; }
-      .main-carousel .carousel-cell .desc span {
+      .main-carousel .carousel-cell .desc div p:first-child {
+        font-weight: bold; }
+      .main-carousel .carousel-cell .desc div span {
         color: grey; }
+
+.static-banner {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  padding: 2px 10px; }
+  .static-banner a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none; }
+
+.static-banner1 {
+  right: 10px;
+  bottom: 10px; }
 
 .br {
   min-height: 1px;
@@ -421,15 +438,15 @@ html, body {
     min-height: 250px;
     min-width: 375px; }
   .footer .location {
-    flex-grow: 1; }
+    flex: 1; }
   .footer .social {
     display: flex;
-    flex-grow: 1;
+    flex: 1;
     justify-content: space-around;
     align-items: center; }
     .footer .social a {
       color: inherit; }
   .footer .email {
-    flex-grow: 1; }
+    flex: 1; }
 
 /*# sourceMappingURL=main.css.map */

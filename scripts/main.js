@@ -152,9 +152,9 @@ window.onload = function () {
     move(0);
 
     // automatic switch slide
-    // setInterval(()=>{
-    //   move(1);
-    // }, 3000);
+    setInterval(()=>{
+      move(1);
+    }, 3000);
 
   })();
 
@@ -163,15 +163,10 @@ window.onload = function () {
 
   cards.forEach((card)=>{
     // add this so flip works on touch screen
-    // card.addEventListener('touchstart', ()=>{
-    //   console.log(card);
-    //   card.classList.toggle("flipped")
-    // });
-
-    // card.addEventListener('mouseenter', ()=>{
-    //   console.log(card);
-    //   card.classList.toggle("flipped")
-    // });
+    card.addEventListener('touchstart', ()=>{
+      console.log(card);
+      card.classList.toggle("flipped")
+    });
   });
 }
 

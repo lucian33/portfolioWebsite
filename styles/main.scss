@@ -61,7 +61,7 @@ html, body{
     font-family: 'Libre Barcode 128 Text', cursive;
   }
   #section{
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -220,7 +220,7 @@ html, body{
       // font-size: 1vw;
       width: 50%;
       min-width: 350px;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
   }
@@ -233,16 +233,16 @@ html, body{
   text-align: left;
   background-color: hsla(0,0%,100%,.75);
   padding: 5px;
-  // min-width: 375px;
+
   .carousel-cell{
-    // border: 1px solid black;
-    // background-color: blue;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
-    min-height: 35vh;
-    width: 85%;
+    min-height: 45vh;
+    // min-width: 300px;
+    width: 75%;
     padding: 15px;
 
     & .br{
@@ -253,6 +253,7 @@ html, body{
 
     // header for the carousel-cell
     .header{
+      font-weight: bold;
       font-size: 2rem;
       // justify-content: center;
       align-self: flex-start;
@@ -266,18 +267,34 @@ html, body{
       justify-content: space-between;
       flex-wrap: wrap;
       div{
-        // min-width: 350px;
-        // min-height: 150px;
         // flex: 1;
+        p:first-child {
+          font-weight: bold;
+        }
+        span{
+          color: grey;
+        }
       }
-
-      span{
-        color: grey;
-      }
-
     }
   }
 
+}
+
+.static-banner {
+  position: absolute;
+  background: hsla(0, 0%, 0%, 0.3);
+  z-index: 1;
+  padding: 2px 10px;
+  a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.static-banner1 {
+  right: 10px;
+  bottom: 10px;
 }
 
 // separate line class that works in any browser
@@ -632,11 +649,11 @@ html, body{
   }
 
   & .location{
-    flex-grow: 1;
+    flex: 1;
   }
   & .social{
     display: flex;
-    flex-grow: 1;
+    flex: 1;
     // // vertical and horizontal align divs
     justify-content: space-around;
     align-items: center;
@@ -647,6 +664,6 @@ html, body{
 
   }
   & .email{
-    flex-grow: 1;
+    flex: 1;
   }
 }
