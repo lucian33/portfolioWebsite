@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   text-align: center;
   font-family: roboto;
-  font-size: 14px; }
+  font-size: calc(10px + 0.25vw); }
 
 .sepLine {
   height: 1px;
@@ -30,11 +30,11 @@ html, body {
   flex-direction: column; }
   .navBar #header {
     display: block;
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin: 5px;
     font-family: 'Libre Barcode 128 Text', cursive; }
   .navBar #section {
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -94,8 +94,9 @@ html, body {
   display: flex;
   flex-direction: column;
   color: rgba(66, 66, 66, 0.84);
-  text-shadow: 1px 1px 5px rgba(0, 0, 22, 0.1);
-  justify-content: center; }
+  text-shadow: 1px 1px 5px rgba(0, 0, 22, 0.1); }
+  .infoSession div {
+    margin: 10px 0; }
   .infoSession h1 {
     margin: 10px 0; }
     .infoSession h1 img {
@@ -136,39 +137,51 @@ html, body {
       -webkit-animation-delay: 3s;
       text-align: left;
       width: 50%;
-      min-width: 350px;
+      margin: 5px;
+      min-width: 320px;
       font-size: 1.4rem; }
 
 .main-carousel {
   color: black;
   text-align: left;
-  background-color: rgba(255, 255, 255, 0.75);
-  padding: 5px; }
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 10px; }
   .main-carousel .carousel-cell {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     min-height: 45vh;
-    width: 75%;
+    min-width: 300px;
+    width: 60%;
     padding: 15px; }
     .main-carousel .carousel-cell .br {
       width: 50%;
-      height: 3px;
+      height: 5px;
       background-color: pink; }
+    .main-carousel .carousel-cell .social {
+      display: flex;
+      min-width: 150px;
+      width: 20%;
+      justify-content: space-between;
+      align-items: center; }
+      .main-carousel .carousel-cell .social a {
+        color: inherit; }
     .main-carousel .carousel-cell .header {
       font-weight: bold;
-      font-size: 2rem;
+      font-size: 2.5rem;
       align-self: flex-start; }
     .main-carousel .carousel-cell .desc {
       display: flex;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap; }
-      .main-carousel .carousel-cell .desc div p:first-child {
-        font-weight: bold; }
-      .main-carousel .carousel-cell .desc div span {
-        color: grey; }
+      .main-carousel .carousel-cell .desc div {
+        flex: 1; }
+        .main-carousel .carousel-cell .desc div p:first-child {
+          font-weight: bold; }
+        .main-carousel .carousel-cell .desc div span {
+          color: grey; }
 
 .static-banner {
   position: absolute;

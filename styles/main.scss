@@ -24,7 +24,7 @@ html, body{
   padding: 0;
   text-align: center;
   font-family: roboto;
-  font-size: 14px;
+  font-size:calc(10px + 0.25vw);
 }
 
 .sepLine{
@@ -56,12 +56,12 @@ html, body{
 
   #header{
     display: block;
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin: 5px;
     font-family: 'Libre Barcode 128 Text', cursive;
   }
   #section{
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -162,7 +162,10 @@ html, body{
   color: rgba(66, 66, 66, 0.84);
   text-shadow: 1px 1px 5px rgba(0,0,22,0.1);
 
-  justify-content: center;
+  // justify-content: space-around;
+  div{
+    margin: 10px 0;
+  }
   h1 {
     margin: 10px 0;
 
@@ -219,7 +222,8 @@ html, body{
       text-align: left;
       // font-size: 1vw;
       width: 50%;
-      min-width: 350px;
+      margin: 5px;
+      min-width: 320px;
       font-size: 1.4rem;
     }
 
@@ -231,30 +235,53 @@ html, body{
 .main-carousel{
   color: black;
   text-align: left;
-  background-color: hsla(0,0%,100%,.75);
-  padding: 5px;
-
+  background-color: hsla(0,0%,100%,.85);
+  padding: 10px;
+  // margin-top: 25px;
   .carousel-cell{
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     min-height: 45vh;
-    // min-width: 300px;
-    width: 75%;
+    min-width: 300px;
+    width: 60%;
     padding: 15px;
 
     & .br{
       width: 50%;
-      height:3px;
+      height:5px;
       background-color: pink;
+    }
+
+    & .social{
+      display: flex;
+      min-width: 150px;
+      width: 20%;
+
+      justify-content: space-between;
+      align-items: center;
+
+      a{
+        color: inherit; 
+      }
+      // a:nth-child(1){
+      //   color: red;
+      // }
+      // a:nth-child(2){
+      //   color: green;
+      // }
+      // a:nth-child(3){
+      //   color: blue;
+      // }
+
     }
 
     // header for the carousel-cell
     .header{
       font-weight: bold;
-      font-size: 2rem;
+      font-size: 2.5rem;
       // justify-content: center;
       align-self: flex-start;
     }
@@ -262,12 +289,12 @@ html, body{
     // each column of description region
     .desc{
       display: flex;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
       div{
-        // flex: 1;
+        flex: 1;
         p:first-child {
           font-weight: bold;
         }
