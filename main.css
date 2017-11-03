@@ -214,7 +214,7 @@ html, body {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  min-height: 120vh;
+  min-height: 100vh;
   background-color: ghostWhite;
   font-size: 1.3rem; }
   .multiColumn .projectText .br {
