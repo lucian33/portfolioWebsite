@@ -21,7 +21,7 @@ html, body {
   left: 0;
   color: white;
   padding: 10px 0;
-  min-height: 90px;
+  min-height: 100px;
   background-color: pink;
   box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
   opacity: 0.95;
@@ -30,7 +30,7 @@ html, body {
   flex-direction: column; }
   .navBar #header {
     display: block;
-    font-size: 4rem;
+    font-size: 4.5rem;
     margin: 5px;
     font-family: 'Libre Barcode 128 Text', cursive; }
   .navBar #section {
@@ -38,7 +38,8 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-family: 'Poiret One', cursive; }
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 5px; }
     .navBar #section div {
       cursor: pointer; }
 
@@ -98,13 +99,14 @@ html, body {
   .infoSession div {
     margin: 10px 0; }
   .infoSession h1 {
-    
     margin: 10px 0; }
     .infoSession h1 img {
       vertical-align: middle;
       width: 20%; }
   .infoSession .cardWrapper {
     height: 50%; }
+    .infoSession .cardWrapper h1 {
+      font-size: 3rem; }
     .infoSession .cardWrapper .pic {
       /*  creates circle for img  */
       -webkit-border-radius: 50%;
@@ -178,12 +180,15 @@ html, body {
       justify-content: space-between;
       flex-wrap: wrap; }
       .main-carousel .carousel-cell .desc div {
-        flex: 1; }
+        min-width: 350px; }
         .main-carousel .carousel-cell .desc div p:first-child {
           font-weight: bold; }
         .main-carousel .carousel-cell .desc div span {
           color: grey; }
 
+@media (max-width: 640px) {
+  .flickity-prev-next-button {
+    visibility: hidden; } }
 .static-banner {
   position: absolute;
   background: rgba(0, 0, 0, 0.3);
@@ -205,21 +210,25 @@ html, body {
 
 .multiColumn {
   display: flex;
-  flex-direction: clomun;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  min-height: 120vh;
   background-color: ghostWhite;
-  padding: 5% 0; }
-  .multiColumn > div {
+  font-size: 1.3rem; }
+  .multiColumn .projectText .br {
+    width: 50%;
+    height: 5px;
+    background-color: pink; }
+  .multiColumn .projectCards {
     width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center; }
-    .multiColumn > div div {
+    .multiColumn .projectCards div {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -227,16 +236,20 @@ html, body {
       min-height: 350px;
       width: 40vw;
       height: 45%;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -ms-border-radius: 15px;
+      border-radius: 15px;
       perspective: 1000px;
       /* hide back of pane during swap */
       /* front pane, placed above back */
       /* back, initially hidden pane */ }
-      .multiColumn > div div div {
+      .multiColumn .projectCards div div {
         align-items: flex-start;
         justify-content: flex-start; }
-      .multiColumn > div div:hover .flipper {
+      .multiColumn .projectCards div:hover .flipper {
         transform: rotateY(180deg); }
-      .multiColumn > div div.flipper {
+      .multiColumn .projectCards div.flipper {
         transition: 1s;
         transform-style: preserve-3d;
         position: relative;
@@ -244,7 +257,7 @@ html, body {
         box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.2);
         height: 100%;
         width: 100%; }
-      .multiColumn > div div.front, .multiColumn > div div .back {
+      .multiColumn .projectCards div.front, .multiColumn .projectCards div .back {
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         position: absolute;
@@ -252,59 +265,59 @@ html, body {
         left: 0;
         height: 100%;
         width: 100%; }
-      .multiColumn > div div.front {
+      .multiColumn .projectCards div.front {
         z-index: 2;
         transform: rotateY(0deg);
         background-color: red;
         opacity: 0.4; }
-      .multiColumn > div div.back {
+      .multiColumn .projectCards div.back {
         transform: rotateY(180deg);
         cursor: pointer;
         background-color: blue;
         opacity: 1; }
-      .multiColumn > div div#proj1 .front {
+      .multiColumn .projectCards div#proj1 .front {
         background-image: url("assets/cyclist-dribbble.gif");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -ms-background-size: cover;
         background-size: cover; }
-      .multiColumn > div div#proj1 .back {
+      .multiColumn .projectCards div#proj1 .back {
         background-image: url("assets/cyclist-dribbble.gif");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -ms-background-size: cover;
         background-size: cover; }
-      .multiColumn > div div#proj2 .front {
+      .multiColumn .projectCards div#proj2 .front {
         background-image: url("assets/mail.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -ms-background-size: cover;
         background-size: cover; }
-      .multiColumn > div div#proj2 .back {
+      .multiColumn .projectCards div#proj2 .back {
         background-image: url("assets/mail.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -ms-background-size: cover;
         background-size: cover; }
-      .multiColumn > div div#proj3 .front {
+      .multiColumn .projectCards div#proj3 .front {
         background-image: url("assets/music.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -ms-background-size: cover;
         background-size: cover; }
-      .multiColumn > div div#proj3 .back {
+      .multiColumn .projectCards div#proj3 .back {
         background-image: url("assets/music.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -ms-background-size: cover;
         background-size: cover; }
-      .multiColumn > div div#proj4 .front {
+      .multiColumn .projectCards div#proj4 .front {
         background-image: url("assets/webmap.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -ms-background-size: cover;
         background-size: cover; }
-      .multiColumn > div div#proj4 .back {
+      .multiColumn .projectCards div#proj4 .back {
         background-image: url("assets/webmap.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
