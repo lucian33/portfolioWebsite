@@ -192,7 +192,7 @@ window.onload = function () {
     tile.style.background = color;
 
     let skillBar = bar.children[1];
-    
+
     skillBar.style.background = color;
 
   });
@@ -202,7 +202,7 @@ window.onload = function () {
 
 // random colors generator for skills bar
 function colorGenerator(){
-  let rgb = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+  let rgb = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 220)) + ',' + (Math.floor(Math.random() * 128)) + ')';
   return rgb;
 }
 
