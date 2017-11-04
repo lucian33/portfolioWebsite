@@ -1,5 +1,7 @@
 $assetPath : "assets";
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -14,6 +16,21 @@ $assetPath : "assets";
           background-size: $type;
 }
 
+@mixin transition($time, $style){
+  -webkit-transition:$time, $style;
+     -moz-transition:$time, $style;
+      -ms-transition:$time, $style;
+       -o-transition:$time, $style;
+          transition:$time, $style;
+}
+
+@mixin transition-property($width, $color){
+  -webkit-transition-property:$width, $color;
+	   -moz-transition-property:$width, $color;
+	    -ms-transition-property:$width, $color;
+	     -o-transition-property:$width, $color;
+	        transition-property:$width, $color;
+}
 
 
 
@@ -123,6 +140,14 @@ html, body{
 // since there is a placeHolder dive before the main content
 // no longer needs absolute position
 .mainContent {
+
+  // separate each dive a little bit
+  // they are tooooooo close
+  &>div{
+    margin: 10px 0;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
   // no longer need this now
   // since I have enough content for scroll
   // height: 350%;
@@ -151,7 +176,7 @@ html, body{
   height: 25%;
   min-height: 380px;
   padding: 30px 10px;
-  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
   // fixed back ground
   // not working on iOS device
   // background: url(#{$assetPath}/MountainPeak.jpg) no-repeat center center fixed;
@@ -347,7 +372,8 @@ html, body{
 
 .multiColumn {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   // overflow-x: auto;
@@ -358,6 +384,7 @@ html, body{
   font-size: 1.3rem;
 
   .projectText {
+    // align-self: flex-start;
     .br{
       width: 50%;
       height: 5px;
@@ -548,7 +575,7 @@ html, body{
 
 .favorites {
   height: 40vw;
-
+  background-color: ghostWhite;
   min-height: 375px;
 
   & .carouselWrapper{
@@ -625,56 +652,152 @@ html, body{
 
 .contacts {
 
-  & >div{
-    padding: 10% 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: white;
-    width: 100%;
-    & >div{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      width: 50%;
-      min-width:350px;
-    }
-    & #form{
-      div{
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex;
-        justify-content: flex-start;
-        flex-grow: 1;
-      }
-      & .form-control{
-        border: 0;
-        border-bottom: 2px solid grey;
-      }
-      input, textarea{
-        font-size: 20px;
-      }
-      textarea {
-        background-color: ghostWhite;
-      }
-      & #sendMessage{
-        width: 45px;
-        height: 45px;
-        @include border-radius(50%);
-        background-color: white;
-        color: #2791bb;
-        cursor: pointer;
-        align-self: flex-start;
-        border: 0px;
-        margin-bottom: 20px;
-        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-      }
-    }
-
+  h1{
+    font-size: 3rem;
   }
+
+  & .br{
+    width: 50%;
+    height:5px;
+    background-color: pink;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10%;
+  background-color: ghostWhite;
+  font-size: 1.3rem;
+
+  .skillsHeader{
+    // flex: 1;
+    font-size: 3rem;
+  }
+
+  .skillsBarContainer{
+    flex-grow: 1;
+    min-width: 350px;
+    max-width: 50%;
+    margin: 10px;
+    padding: 10px;
+  }
+
+
+  // skills bar styles
+
+  .skillbar {
+    font-family: 'Open Sans', 'sans-serif';
+  	position:relative;
+  	display:block;
+  	margin-bottom:15px;
+  	width:100%;
+  	background:#eee;
+  	height:35px;
+  	@include border-radius(3px);
+  	@include transition(0.5s, linear);
+  	@include transition-property(width, background-color);
+  }
+
+  .skillbar-title {
+  	position:absolute;
+  	top:0;
+  	left:0;
+  	font-weight:bold;
+  	font-size:13px;
+  	color:#fff;
+  	background:#6adcfa;
+  	-webkit-border-top-left-radius:3px;
+  	-webkit-border-bottom-left-radius:4px;
+  	-moz-border-radius-topleft:3px;
+  	-moz-border-radius-bottomleft:3px;
+  	border-top-left-radius:3px;
+  	border-bottom-left-radius:3px;
+  }
+
+  .skillbar-title span {
+  	display:block;
+  	background:rgba(0, 0, 0, 0.1);
+  	padding:0 20px;
+  	height:35px;
+  	line-height:35px;
+  	-webkit-border-top-left-radius:3px;
+  	-webkit-border-bottom-left-radius:3px;
+  	-moz-border-radius-topleft:3px;
+  	-moz-border-radius-bottomleft:3px;
+  	border-top-left-radius:3px;
+  	border-bottom-left-radius:3px;
+  }
+
+  .skillbar-bar {
+  	height:35px;
+  	width:0px;
+  	background:#6adcfa;
+  	border-radius:3px;
+  	@include border-radius(3px);
+  }
+
+  .skill-bar-percent {
+  	position:absolute;
+  	right:10px;
+  	top:0;
+  	font-size:11px;
+  	height:35px;
+  	line-height:35px;
+  	color:#444;
+  	color:rgba(0, 0, 0, 0.4);
+  }
+
+  // & >div{
+  //   padding: 10% 0;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: space-around;
+  //   background-color: white;
+  //   width: 100%;
+  //   & >div{
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     text-align: left;
+  //     width: 50%;
+  //     min-width:350px;
+  //   }
+  //   & #form{
+  //     div{
+  //
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: flex;
+  //       justify-content: flex-start;
+  //       flex-grow: 1;
+  //     }
+  //     & .form-control{
+  //       border: 0;
+  //       border-bottom: 2px solid grey;
+  //     }
+  //     input, textarea{
+  //       font-size: 20px;
+  //     }
+  //     textarea {
+  //       background-color: ghostWhite;
+  //     }
+  //     & #sendMessage{
+  //       width: 45px;
+  //       height: 45px;
+  //       @include border-radius(50%);
+  //       background-color: white;
+  //       color: #2791bb;
+  //       cursor: pointer;
+  //       align-self: flex-start;
+  //       border: 0px;
+  //       margin-bottom: 20px;
+  //       box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  //     }
+  //   }
+  //
+  // }
 
 
 }
@@ -689,13 +812,14 @@ html, body{
   flex-wrap: wrap;
   color: white;
   text-shadow: 1px 1px 5px rgba(0,0,22,0.1);
-  padding: 20px 0;
-  &>div{
+  padding-top: 20px;
+  div{
     min-height: 250px;
     min-width: 375px;
   }
 
   & .location{
+    align-self: center;
     flex: 1;
   }
   & .social{
@@ -713,4 +837,6 @@ html, body{
   & .email{
     flex: 1;
   }
+
+
 }

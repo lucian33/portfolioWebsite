@@ -22,9 +22,9 @@
     <div id="header"> HAO'S PORTFOLIO </div>
     <div id="section">
       <div id="info">infomation</div>
+      <div id="contact">skills</div>
       <div id="proj">projects</div>
       <div id="fav">favorites</div>
-      <div id="contact">contact</div>
     </div>
 
   </div>
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-
+      <div class="resumeWrapper">
         <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "cellSelector": ".carousel-cell" }'>
           <div class="static-banner static-banner1"><a href="assets/GIS_Zhang_H.pdf"><i class="fa fa-file-text-o" aria-hidden="true"></i>    Resume</a>
           </div>
@@ -129,7 +129,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-cell">
+          <!-- <div class="carousel-cell">
             <div class="header">
               SKILLS
               <div class="br"> </div>
@@ -142,7 +142,7 @@
 
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- <div class="carousel-cell">
             <div class="header">
               Resume
@@ -156,10 +156,104 @@
             </span>
           </div> -->
         </div>
+      </div>
+
+    </div>
+    <div class="contacts" id="contactArea">
+
+        <div class="skillsHeader">
+          <h1>SKILLS</h1>
+          <div class="br"></div>
+        </div>
+        <div class="skillsBarContainer">
+          <div class="skillbar clearfix " data-percent="90%">
+          	<div class="skillbar-title" style="background: #88cd2a;"><span>JavaScript</span></div>
+          	<div class="skillbar-bar" style="background: #88cd2a;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="90%">
+          	<div class="skillbar-title" style="background: #88cd2a;"><span>AngularJS</span></div>
+          	<div class="skillbar-bar" style="background: #88cd2a;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="60%">
+          	<div class="skillbar-title" style="background: #88cd2a;"><span>NodeJS</span></div>
+          	<div class="skillbar-bar" style="background: #88cd2a;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="60%">
+          	<div class="skillbar-title" style="background: #88cd2a;"><span>React</span></div>
+          	<div class="skillbar-bar" style="background: #88cd2a;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="70%">
+          	<div class="skillbar-title" style="background: #88cd2a;"><span>WebGL</span></div>
+          	<div class="skillbar-bar" style="background: #88cd2a;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="60%">
+          	<div class="skillbar-title" style="background: #88cd2a;"><span>THREE.js</span></div>
+          	<div class="skillbar-bar" style="background: #88cd2a;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="90%">
+          	<div class="skillbar-title" style="background: #88cd2a;"><span>HTML5</span></div>
+          	<div class="skillbar-bar" style="background: #88cd2a;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="90%">
+          	<div class="skillbar-title" style="background: #00a8ff;"><span>CSS3</span></div>
+          	<div class="skillbar-bar" style="background: #00a8ff;"></div>
+          </div>
+
+          <div class="skillbar clearfix " data-percent="60%">
+          	<div class="skillbar-title" style="background: #00a8ff;"><span>CSS</span></div>
+          	<div class="skillbar-bar" style="background: #00a8ff;"></div>
+
+          </div>
+        </div>
+        <!-- <div id="form">
+          <div>
+              <form name="sentMessage" id="contactForm" novalidate="">
+                <div>
+                  <div>
+                    <h3>Name</h3>
+                    <input class="form-control" id="name" type="text" placeholder="Name" >
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <h3>Email Address</h3>
+                    <input class="form-control" id="email" type="email" placeholder="Email Address" >
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <h3>Phone Number</h3>
+                    <input class="form-control" id="phone" type="tel" placeholder="Phone Number">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <h3>Message</h3>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Message">
+                    </textarea>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <button type="submit" id="sendMessage"><i class="fa fa-paper-plane fa-3x" aria-hidden="true"></i></button>
+                </div>
+              </form>
+            </div>
+        </div> -->
+
 
 
     </div>
-
     <div class="multiColumn" id="projArea">
       <div class="projectText">
         <h1>PROJECTS</h1>
@@ -250,52 +344,7 @@
       </div>
     </div>
 
-    <div class="contacts" id="contactArea">
-      <div>
-        <div>
-          <h1>Contact Me</h1>
-        </div>
-        <div id="form">
-          <div>
-              <form name="sentMessage" id="contactForm" novalidate="">
-                <div>
-                  <div>
-                    <h3>Name</h3>
-                    <input class="form-control" id="name" type="text" placeholder="Name" >
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <h3>Email Address</h3>
-                    <input class="form-control" id="email" type="email" placeholder="Email Address" >
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <h3>Phone Number</h3>
-                    <input class="form-control" id="phone" type="tel" placeholder="Phone Number">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <h3>Message</h3>
-                    <textarea class="form-control" id="message" rows="5" placeholder="Message">
-                    </textarea>
-                  </div>
-                </div>
-                <br>
-                <div class="form-group">
-                  <button type="submit" id="sendMessage"><i class="fa fa-paper-plane fa-3x" aria-hidden="true"></i></button>
-                </div>
-              </form>
-            </div>
-        </div>
-      </div>
 
-    </div>
 
   </div>
 

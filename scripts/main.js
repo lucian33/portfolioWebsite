@@ -168,6 +168,23 @@ window.onload = function () {
       card.classList.toggle("flipped")
     });
   });
+
+
+
+  // animation for skills bar
+  // jQuery('.skillbar').each(function(){
+  // 	jQuery(this).find('.skillbar-bar').animate({
+  // 		width:jQuery(this).attr('data-percent')
+  // 	},2000);
+  // });
+  document.querySelectorAll(".skillbar").forEach((bar)=>{
+    // select the skillbar's bar
+    let skillBar = bar.children[1];
+    // get it's percentage
+    skillBar.style.width = bar.getAttribute("data-percent");
+    skillBar.style.transition = "width 2s"
+  });
+
 }
 
 // pass the element into it

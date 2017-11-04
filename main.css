@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 html, body {
   height: 100%;
   margin: 0;
@@ -72,6 +73,9 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: column; }
+  .mainContent > div {
+    margin: 10px 0;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2); }
   .mainContent .fixedBg {
     background-image: url("assets/MountainPeak.jpg");
     -webkit-background-size: cover;
@@ -91,7 +95,6 @@ html, body {
   height: 25%;
   min-height: 380px;
   padding: 30px 10px;
-  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   color: rgba(66, 66, 66, 0.84);
@@ -210,7 +213,7 @@ html, body {
 
 .multiColumn {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -361,6 +364,7 @@ html, body {
 
 .favorites {
   height: 40vw;
+  background-color: ghostWhite;
   min-height: 375px; }
   .favorites .carouselWrapper {
     position: relative;
@@ -409,48 +413,94 @@ html, body {
 .current {
   display: block !important; }
 
-.contacts > div {
-  padding: 10% 0;
+.contacts {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
-  background-color: white;
-  width: 100%; }
-  .contacts > div > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
+  align-items: center;
+  padding: 10%;
+  background-color: ghostWhite;
+  font-size: 1.3rem; }
+  .contacts h1 {
+    font-size: 3rem; }
+  .contacts .br {
     width: 50%;
-    min-width: 350px; }
-  .contacts > div #form div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex;
-    justify-content: flex-start;
-    flex-grow: 1; }
-  .contacts > div #form .form-control {
-    border: 0;
-    border-bottom: 2px solid grey; }
-  .contacts > div #form input, .contacts > div #form textarea {
-    font-size: 20px; }
-  .contacts > div #form textarea {
-    background-color: ghostWhite; }
-  .contacts > div #form #sendMessage {
-    width: 45px;
-    height: 45px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    border-radius: 50%;
-    background-color: white;
-    color: #2791bb;
-    cursor: pointer;
-    align-self: flex-start;
-    border: 0px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); }
+    height: 5px;
+    background-color: pink; }
+  .contacts .skillsHeader {
+    font-size: 3rem; }
+  .contacts .skillsBarContainer {
+    flex-grow: 1;
+    min-width: 350px;
+    max-width: 50%;
+    margin: 10px;
+    padding: 10px; }
+  .contacts .skillbar {
+    font-family: 'Open Sans', 'sans-serif';
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    background: #eee;
+    height: 35px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: 0.5s, linear;
+    -moz-transition: 0.5s, linear;
+    -ms-transition: 0.5s, linear;
+    -o-transition: 0.5s, linear;
+    transition: 0.5s, linear;
+    -webkit-transition-property: width, background-color;
+    -moz-transition-property: width, background-color;
+    -ms-transition-property: width, background-color;
+    -o-transition-property: width, background-color;
+    transition-property: width, background-color; }
+  .contacts .skillbar-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fff;
+    background: #6adcfa;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px; }
+  .contacts .skillbar-title span {
+    display: block;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    height: 35px;
+    line-height: 35px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px; }
+  .contacts .skillbar-bar {
+    height: 35px;
+    width: 0px;
+    background: #6adcfa;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+  .contacts .skill-bar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 11px;
+    height: 35px;
+    line-height: 35px;
+    color: #444;
+    color: rgba(0, 0, 0, 0.4); }
 
 .footer {
   display: flex;
@@ -460,11 +510,12 @@ html, body {
   flex-wrap: wrap;
   color: white;
   text-shadow: 1px 1px 5px rgba(0, 0, 22, 0.1);
-  padding: 20px 0; }
-  .footer > div {
+  padding-top: 20px; }
+  .footer div {
     min-height: 250px;
     min-width: 375px; }
   .footer .location {
+    align-self: center;
     flex: 1; }
   .footer .social {
     display: flex;
