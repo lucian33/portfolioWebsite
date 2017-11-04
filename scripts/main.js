@@ -68,11 +68,12 @@ window.onload = function () {
       // add this at here so the animation plays when the
       // user scroll into this view
       document.querySelectorAll(".skillbar").forEach((bar)=>{
-        // select the skillbar's bar
+
         let skillBar = bar.children[1];
         // get it's percentage
         skillBar.style.width = bar.getAttribute("data-percent");
         skillBar.style.transition = "width 2s"
+
       });
       // console.log("proj");
     }
@@ -182,13 +183,27 @@ window.onload = function () {
 
 
   // animation for skills bar
-  // jQuery('.skillbar').each(function(){
-  // 	jQuery(this).find('.skillbar-bar').animate({
-  // 		width:jQuery(this).attr('data-percent')
-  // 	},2000);
-  // });
+  document.querySelectorAll(".skillbar").forEach((bar)=>{
+
+    let tile = bar.children[0];
+    // give title a random color
+    color = colorGenerator();
+
+    tile.style.background = color;
+
+    let skillBar = bar.children[1];
+    
+    skillBar.style.background = color;
+
+  });
 
 
+}
+
+// random colors generator for skills bar
+function colorGenerator(){
+  let rgb = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+  return rgb;
 }
 
 // pass the element into it
