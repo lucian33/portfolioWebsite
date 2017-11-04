@@ -64,6 +64,16 @@ window.onload = function () {
       sections[1].classList.add("currentSection");
       sections[2].classList.remove("currentSection");
       sections[3].classList.remove("currentSection");
+
+      // add this at here so the animation plays when the
+      // user scroll into this view
+      document.querySelectorAll(".skillbar").forEach((bar)=>{
+        // select the skillbar's bar
+        let skillBar = bar.children[1];
+        // get it's percentage
+        skillBar.style.width = bar.getAttribute("data-percent");
+        skillBar.style.transition = "width 2s"
+      });
       // console.log("proj");
     }
     else if (pixel < (sectHeight[0] + sectHeight[1]) + sectHeight[2]) {
@@ -177,13 +187,7 @@ window.onload = function () {
   // 		width:jQuery(this).attr('data-percent')
   // 	},2000);
   // });
-  document.querySelectorAll(".skillbar").forEach((bar)=>{
-    // select the skillbar's bar
-    let skillBar = bar.children[1];
-    // get it's percentage
-    skillBar.style.width = bar.getAttribute("data-percent");
-    skillBar.style.transition = "width 2s"
-  });
+
 
 }
 
