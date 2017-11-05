@@ -677,7 +677,7 @@ html, body{
 
   .skillsBarContainer{
     flex-grow: 1;
-    min-width: 350px;
+    min-width: 330px;
     max-width: 50%;
     margin: 10px;
     padding: 10px;
@@ -697,6 +697,13 @@ html, body{
   	@include border-radius(3px);
   	@include transition(0.5s, linear);
   	@include transition-property(width, background-color);
+  }
+  .skillbar:hover{
+    background-color: ghostWhite;
+    width: 110%;
+    // max-width: 350px;
+
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.2);
   }
 
   .skillbar-title {

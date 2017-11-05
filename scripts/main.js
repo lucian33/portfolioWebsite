@@ -182,7 +182,8 @@ window.onload = function () {
 
 
 
-  // animation for skills bar
+  // random Color for skills bar
+
   document.querySelectorAll(".skillbar").forEach((bar)=>{
 
     let tile = bar.children[0];
@@ -202,7 +203,7 @@ window.onload = function () {
 
 // random colors generator for skills bar
 function colorGenerator(){
-  let hsl = 'hsl(' + (Math.floor(rangedRandom(0, 360))) + ',' + (rangedRandom(30, 100)) + '%,' + (rangedRandom(40, 80)) + '%)';
+  let hsl = 'hsl(' + (Math.floor(rangedRandom(0, 282))) + ',' + (rangedRandom(50, 100)) + '%,' + (rangedRandom(40, 80)) + '%)';
   console.log("The color you get is: " + hsl);
   return hsl;
 }
