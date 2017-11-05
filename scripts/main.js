@@ -202,8 +202,13 @@ window.onload = function () {
 
 // random colors generator for skills bar
 function colorGenerator(){
-  let rgb = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 220)) + ',' + (Math.floor(Math.random() * 128)) + ')';
-  return rgb;
+  let hsl = 'hsl(' + (Math.floor(rangedRandom(0, 360))) + ',' + (rangedRandom(30, 100)) + '%,' + (rangedRandom(40, 80)) + '%)';
+  console.log("The color you get is: " + hsl);
+  return hsl;
+}
+
+function rangedRandom(min, max) {
+  return Math.random() * (max - min) + min;
 }
 
 // pass the element into it
