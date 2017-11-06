@@ -457,7 +457,9 @@ html, body{
         background-color: red;
         flex-direction: column;
         color: black;
-
+        .contentContainer{
+          background-color: rgba(125, 125, 125, 0.2);
+        }
         // justify-content: center;
       }
 
