@@ -67,12 +67,13 @@ window.onload = function () {
 
       // add this at here so the animation plays when the
       // user scroll into this view
-      document.querySelectorAll(".skillbar").forEach((bar)=>{
-
+      document.querySelectorAll(".skillbar").forEach((bar, i)=>{
+        console.log(i);
         let skillBar = bar.children[1];
         // get it's percentage
         skillBar.style.width = bar.getAttribute("data-percent");
-        skillBar.style.transition = "width 2s"
+        // delay the animation by 0.2 s
+        skillBar.style.transition = "width " + (1 + i * 0.2) + "s";
 
       });
       // console.log("proj");
@@ -175,7 +176,6 @@ window.onload = function () {
   cards.forEach((card)=>{
     // add this so flip works on touch screen
     card.addEventListener('touchstart', ()=>{
-      console.log(card);
       card.classList.toggle("flipped")
     });
   });
