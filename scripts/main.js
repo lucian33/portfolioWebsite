@@ -113,62 +113,62 @@ window.onload = function () {
   modal.querySelector('.close').onclick = closeModal;
 
   // closure with self invoking function
-  let carousel = (function(){
-    let wrapper = document.querySelector('.carouselWrapper');
-    // get the control element
-    let next = wrapper.querySelector('.next');
-    let prev = wrapper.querySelector('.prev');
-    // select slides
-    let slides = wrapper.querySelectorAll('.slides div');
-    // count the current index
-    let index = 0;
-    let slidesSum = slides.length;
-    // get current slide div element
-    let current = slides[0];
-
-    wrapper.classList.add('current');
-
-    // move the slide
-    function move(towards) {
-      // hide current slide
-      current.classList.remove('current');
-      // update current index
-      index = index + towards;
-      // move left
-      if (towards === -1 && index < 0) {
-        // loop to the max index
-        index = slidesSum - 1;
-      }
-      // move right
-      if (towards === 1 && !slides[index]) {
-        // loop to start
-        index = 0;
-      }
-
-      current = slides[index];
-
-      current.classList.add('current');
-
-    }
-
-    next.addEventListener('click', function(ev) {
-      console.log('next');
-      move(1);
-    });
-
-    prev.addEventListener('click', function(ev) {
-      console.log('prev');
-      move(-1);
-    });
-
-    move(0);
-
-    // automatic switch slide
-    setInterval(()=>{
-      move(1);
-    }, 3000);
-
-  })();
+  // let carousel = (function(){
+  //   let wrapper = document.querySelector('.carouselWrapper');
+  //   // get the control element
+  //   let next = wrapper.querySelector('.next');
+  //   let prev = wrapper.querySelector('.prev');
+  //   // select slides
+  //   let slides = wrapper.querySelectorAll('.slides div');
+  //   // count the current index
+  //   let index = 0;
+  //   let slidesSum = slides.length;
+  //   // get current slide div element
+  //   let current = slides[0];
+  //
+  //   wrapper.classList.add('current');
+  //
+  //   // move the slide
+  //   function move(towards) {
+  //     // hide current slide
+  //     current.classList.remove('current');
+  //     // update current index
+  //     index = index + towards;
+  //     // move left
+  //     if (towards === -1 && index < 0) {
+  //       // loop to the max index
+  //       index = slidesSum - 1;
+  //     }
+  //     // move right
+  //     if (towards === 1 && !slides[index]) {
+  //       // loop to start
+  //       index = 0;
+  //     }
+  //
+  //     current = slides[index];
+  //
+  //     current.classList.add('current');
+  //
+  //   }
+  //
+  //   next.addEventListener('click', function(ev) {
+  //     console.log('next');
+  //     move(1);
+  //   });
+  //
+  //   prev.addEventListener('click', function(ev) {
+  //     console.log('prev');
+  //     move(-1);
+  //   });
+  //
+  //   move(0);
+  //
+  //   // automatic switch slide
+  //   setInterval(()=>{
+  //     move(1);
+  //   }, 3000);
+  //
+  // })();
 
   // tooggle flip animation
   let cards = document.querySelectorAll(".flipper");
