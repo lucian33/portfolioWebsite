@@ -99,14 +99,28 @@ window.onload = function () {
   // click the back of card to open the modal
   let modal = document.getElementById('proj1Modal');
   // select all project cards
-  let projects = document.querySelectorAll('.projectCards>div');
+  let projects = document.querySelectorAll('.projectCards>.iosCard');
   // attach event to the back panel
   projects.forEach((proj) => {
     // for now I'll just open the same modal
     // in the future use ID to get corresponding modal
-    proj.querySelector('.back').addEventListener('click', () => {
-      // show the modal
-      modal.style.display = 'block';
+    // proj.querySelector('.back').addEventListener('click', () => {
+    //   // show the modal
+    //   modal.style.display = 'block';
+    // });
+
+    // expand the card
+    proj.addEventListener('click', () => {
+      proj.classList.add('fullScreen');
+    });
+
+    // close the card
+    proj.querySelector('.close').addEventListener('click', ()=>{
+      // stop the event from bubble phase
+      // so the card won't open again
+      // by trigger the proj.click
+      event.stopPropagation();
+      proj.classList.remove('fullScreen');
     });
   })
 
