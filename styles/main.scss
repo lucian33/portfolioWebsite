@@ -2,10 +2,17 @@ $assetPath : "assets";
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-$tablet-width: 375px;
+$mobile-width: 414px;
+$medium-size: 750px;
 
-@mixin tablet {
-  @media (max-width: #{$tablet-width}) {
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: #{$medium-size}) {
     @content;
   }
 }
@@ -154,7 +161,6 @@ html, body{
   // they are tooooooo close
   &>div{
     margin: 10px 0;
-    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
   // no longer need this now
@@ -203,7 +209,6 @@ html, body{
   }
   h1 {
     margin: 10px 0;
-
     img {
       vertical-align: middle;// center image vertically
       width: 20%;
@@ -374,9 +379,9 @@ html, body{
 
 // separate line class that works in any browser
 .br{
-  min-height: 1px;
-  width: 90%;
-  background-color: grey;
+  width: 50%;
+  height: 5px;
+  background-color: pink;
 }
 
 .multiColumn {
@@ -392,7 +397,7 @@ html, body{
   min-height: 100vh;
   background-color: ghostWhite;
   font-size: 1.3rem;
-  padding: 5% 0;
+  padding: 10% 0;
   .projectText {
     // align-self: flex-start;
     .br{
@@ -402,6 +407,204 @@ html, body{
     }
   }
 
+  // ios11 app store like cards
+  .projectCards{
+    // width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    .iosCard{
+      // flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transform-style: preserve-3d;
+      transition: 1s;
+      width: 350px;
+      height: 400px;
+      margin: 10px;
+      // @include border-radius(15px);
+    }
+
+    .iosCard:hover{
+      cursor: pointer;
+      transform: scale3d(0.975, 0.975, 0.975);
+    }
+
+    // media that contains cardIcons and text
+    .media{
+      font-weight: bold;
+      display: flex;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      @include border-radius(15px);
+      // font-weight: 600;
+      flex-direction: column;
+      text-align: left;
+      justify-content: start;
+      font-size: 2.4rem;
+      color:white;
+      width: 100%;
+      h3{
+        font-family: 'Lato', sans-serif;
+        // font-size: 38px;
+
+        font-weight: 900;
+        margin: 20px 0 0 15px;
+        line-height: 90%;
+      }
+    }
+
+    .description{
+      width: 100%;
+      height: 0;
+      align-self: flex-start;
+      text-align: left;
+      background-color: #bbc8dd;
+      opacity: 0;
+      transition: 0.25s;
+
+      p{
+        font-size: 1.3rem;
+        padding:0 15px;
+      }
+
+      // transition: height 1s;
+      // transition: opacity 0.75s;
+    }
+
+    .contentContainer{
+      text-shadow: 1px 1px 5px rgba(0, 0, 22, 0.8);
+      height: 100%;
+      width: 100%;
+      // background-color: rgba(255, 255, 255, 0.8);
+      .cardIcons{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        .cardIcon{
+          @include border-radius(15px);
+          width: 70px;
+          height: 70px;
+          margin: 10px;
+          padding: 5px;
+          background-color: rgba(255, 255, 255, 0.8);
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .close{
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        @include border-radius(50%);
+        // background-color: #fb9a9a;
+        color: #bbc8dd;
+        cursor: pointer;
+        opacity: 0;
+      }
+
+      .link{
+        cursor: pointer;
+        background-color: white;
+        padding: 5px;
+        width: 60px;
+        position: absolute;
+        font-size: 1.5rem;
+        right: 10px;
+        bottom: 10px;
+        @include border-radius(20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+          display: inline-block;
+          font-size: 14px;
+          text-decoration: none;
+          color: #4284f5;
+          text-shadow: none;
+        }
+      }
+    }
+
+
+    .fullScreen{
+      // expand the ios card
+      cursor: pointer;
+      height: 600px;
+      width: 500px;
+
+      // on small scrren,
+      // take up full size
+      @include mobile{
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        transition: 1s;
+      }
+
+      // top: calc(50% - 250px);
+      // left: calc(50% - 175px);
+      // remove border-radius
+      .media{
+        border-radius: 0;
+      }
+
+      .description{
+        background-color: white;
+        height: auto;
+        opacity: 1;
+      }
+
+      .close{
+        transition: 2s;
+        opacity: 1;
+      }
+
+      // background-color: #eaeaea;
+
+    }
+
+
+    #proj1 .media{
+      background-image: url("assets/p1.gif");
+      @include background-size(auto);
+    }
+
+    #proj2 .media{
+      background-image: url("assets/TMDB.gif");
+      @include background-size(cover);
+      h3{
+        // color: #2d2d2d;
+      }
+    }
+
+    #proj3 .media{
+      background-image: url("assets/music.jpg");
+      @include background-size(cover);
+
+    }
+
+    #proj4 .media{
+      background-image: url("assets/cumtd.gif");
+      @include background-size(cover);
+      h3{
+        color: #2d2d2d;
+        text-shadow: none;
+      }
+    }
+
+  }
   // outside wrapper
   // use this to make all cards start from center
   // .projectCards{
@@ -563,161 +766,12 @@ html, body{
   // }
 
 
-  // ios11 app store like cards
-  .projectCards{
-    // width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
 
-    .iosCard{
-      // flex: 1;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      transform-style: preserve-3d;
-      transition: 1s;
-      width: 350px;
-      height: 350px;
-      margin: 10px;
-      // @include border-radius(15px);
-    }
-
-    .iosCard:hover{
-      cursor: pointer;
-      transform: scale3d(0.975, 0.975, 0.975);
-    }
-
-    // media that contains cardIcons and text
-    .media{
-      display: flex;
-      height: 100%;
-      width: 100%;
-      @include border-radius(15px);
-      font-weight: 400;
-      flex-direction: column;
-      text-align: left;
-      justify-content: start;
-
-      font-size: 2.5rem;
-      color:white;
-      width: 100%;
-      h3{
-        padding:10px;
-      }
-    }
-
-    .description{
-      background-color: red;
-      width: 100%;
-      height: 0;
-      align-self: flex-start;
-      text-align: left;
-      background-color: #bbc8dd;
-      opacity: 0;
-      transition: 0.25s;
-      // transition: height 1s;
-      // transition: opacity 0.75s;
-    }
-
-    .contentContainer{
-      text-shadow: 1px 1px 5px rgba(0, 0, 22, 0.8);
-      height: 100%;
-      width: 100%;
-      // background-color: rgba(255, 255, 255, 0.8);
-      .cardIcons{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        .cardIcon{
-          @include border-radius(15px);
-          width: 70px;
-          height: 70px;
-          margin: 10px;
-          padding: 5px;
-          background-color: rgba(255, 255, 255, 0.8);
-          img{
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-
-      .close{
-        position: absolute;
-        right: 15px;
-        top: 5px;
-        @include border-radius(50%);
-        // background-color: #fb9a9a;
-        color: #bbc8dd;
-        cursor: pointer;
-        opacity: 0;
-      }
-    }
-
-    .fullScreen{
-      // expand the ios card
-      cursor: pointer;
-      height: 500px;
-      width: 400px;
-
-      // on small scrren,
-      // take up full size
-      @include tablet{
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-      }
-
-      // top: calc(50% - 250px);
-      // left: calc(50% - 175px);
-      // remove border-radius
-      .media{
-        border-radius: 0;
-      }
-
-      .description{
-        height: 100px;
-        opacity: 1;
-      }
-
-      .close{
-        transition: 2s;
-        opacity: 1;
-      }
-
-      background-color: #eaeaea;
-
-    }
-
-
-    #proj1 .media{
-      background-image: url("assets/p1.gif");
-      @include background-size(auto);
-    }
-
-    #proj2 .media{
-      background-image: url("assets/TMDB.gif");
-      @include background-size(cover);
-    }
-
-    #proj3 .media{
-      background-image: url("assets/music.jpg");
-      @include background-size(cover);
-    }
-
-    #proj4 .media{
-      background-image: url("assets/cumtd.gif");
-      @include background-size(cover);
-    }
-
-  }
 }
 
 .flipped{
   transform: rotateY(180deg);
-  // box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 // https://www.w3schools.com/howto/howto_css_modals.asp
@@ -774,25 +828,48 @@ html, body{
   }
 }
 
-
 .favorites {
-  // height: 40vw;
-  // background-color: ghostWhite;
-  // min-height: 375px;
-
-  display: flex;
-  // height: 30%;
-  width: 100%;
-  // warp sapce around div inside
-  justify-content: space-around;
-  // align-items: center;
-  flex-wrap: wrap;
-  color: white;
-  text-shadow: 1px 1px 5px rgba(0,0,22,0.1);
-  // padding: 20px 0;
+  // relative positioned parent div
+  position: relative;
   font-size: 0.75rem;
-
+  height: 550px;
+  @include medium{
+    height: 1100px;
+  }
+  // @include mobile{
+  //   height: 1100px;
+  // }
+  background-color: #eeeeeedb;
+  // use this div as container to
+  // absolute position the contacts info
+  // to create a intercect visual effect
   &>div{
+    position: absolute;
+    top: -10%;
+
+    display: flex;
+    max-width: 1000px;
+    height: 120%;
+    @include mobile{
+      top: 0;
+      height: 100%;
+    }
+    width: 90%;
+    @include mobile{
+      width: 100vw;
+    }
+    // center the floated div
+    left: 50%;
+    transform: translateX(-50%);
+    // border: 2px solid rgba(41, 41, 41, 0.1);
+    // warp sapce around div inside
+    justify-content: space-around;
+    // align-items: center;
+    flex-wrap: wrap;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,22,0.1);
+  }
+  &>div>div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -801,55 +878,61 @@ html, body{
     flex: 1;
   }
 
+  .header{
+    span{
+      color: #bbc8dd;
+    }
+    font-size: 2rem;
+  }
+
   .leftFooter{
-    align-items: flex-end;
+    align-items: center;
     background-color: #bbc8dd;
   }
 
   .rightFooter{
-    align-items: flex-start;
+    align-items: center;
     color: black;
     font-size: 1rem;
-    background-color: ghostWhite;
+    background-color: #fff;
   }
 
-  // .leftFooter{
-  //   align-items: flex-end;
-  //   text-shadow: none;
-  //   color: black;
-  //   background-color: ghostWhite;
-  // }
-  //
-  // .rightFooter{
-  //   align-items: flex-start;
-  //   font-size: 1rem;
-  //   background-color: blue;
-  //   background-color: #bbc8dd;
-  // }
-
-  &>div>div{
+  &>div>div>div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 375px;
-    min-height: 250px;
-
-    // background-color: red;
+    min-width: 350px;
   }
-  & .location{
 
+  & .location{
+    min-height: 200px;
   }
   & .email{
-
+    min-height: 200px;
   }
   & .social{
-    display: flex;
-    flex-direction: row;
+    // prevent word overflow from
+    // the overflow window
+    display: block;
+    flex-direction: column;
+    max-height: 400px;
+    overflow: auto;
+
     // // vertical and horizontal align divs
     justify-content: space-evenly;
     align-items: center;
     max-width: 250px;
+    p{
+      font-size: 14px;
+      text-align: left;
+      line-height: 1.7;
+      width: 30rem;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+    }
     a {
       color:inherit;
     }
@@ -1087,19 +1170,52 @@ html, body{
 .footer {
   display: flex;
   max-height: 150px;
-  height: 10vh;
-  width: 100%;
+  height: 25vh;
   // warp sapce around div inside
   justify-content: space-around;
   // align-items: center;
   flex-wrap: wrap;
   color: white;
-  text-shadow: 1px 1px 5px rgba(0,0,22,0.1);
+  // text-shadow: 1px 1px 5px rgba(0,0,22,0.1);
   padding: 20px 0;
   font-size: 0.75rem;
-  background-color: ghostWhite;
+  background-color: #524a48;
+  margin: 0 !important;
 
+  &>div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 
+  .left{
+    font-size: 1.5rem;
+    align-items: center;
+    div{
+      cursor: pointer;
+      width: 50%;
+      padding: 10px;
+      @include border-radius(10px);
+      border: 2px solid white;
+    }
+    div:hover{
+      transition: 1s;
+      transform: scale3d(0.95, 0.95, 0.95);
+    }
+  }
 
+  .right{
+    font-size: 1.5rem;
+    // align-items: left;
+    .social{
+      
+      a{
+        text-decoration: none;
+        color: inherit;
+      }
+
+    }
+  }
 
 }

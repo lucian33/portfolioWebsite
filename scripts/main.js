@@ -114,6 +114,15 @@ window.onload = function () {
       proj.classList.add('fullScreen');
     });
 
+    // add touch event to compatible with touch device
+    proj.addEventListener('touchstart', (e)=>{
+      proj.style.transform = "scale(0.975)";
+    });
+
+    proj.addEventListener('touchend', (e)=>{
+      proj.style.transform = "scale(1)";
+    });
+
     // close the card
     proj.querySelector('.close').addEventListener('click', ()=>{
       // stop the event from bubble phase
