@@ -30,7 +30,7 @@ window.onload = function () {
     else if(scrolledPixel < 50 && navBar.classList.contains("scorolled")){
       document.getElementById('nav').classList.remove('scorolled');
     }
-    console.log(scrolledPixel);
+    // console.log(scrolledPixel);
     sectionDetection(scrolledPixel);
   }
 
@@ -46,18 +46,18 @@ window.onload = function () {
   });
 
   // smooth scroll
-  console.log(sectHeight);
+  // console.log(sectHeight);
 
   // detect position
   function sectionDetection(pixel){
-    console.log(pixel/document.body.scrollHeight);
+    // console.log(pixel/document.body.scrollHeight);
     let ratio = pixel/document.body.scrollHeight;
     if(pixel < sectHeight[0]){
       sections[0].classList.add("currentSection");
       sections[1].classList.remove("currentSection");
       sections[2].classList.remove("currentSection");
       sections[3].classList.remove("currentSection");
-      console.log("info");
+      // console.log("info");
     }
     else if (pixel < (sectHeight[0] + sectHeight[1])){
       sections[0].classList.remove("currentSection");
@@ -68,7 +68,7 @@ window.onload = function () {
       // add this at here so the animation plays when the
       // user scroll into this view
       document.querySelectorAll(".skillbar").forEach((bar, i)=>{
-        console.log(i);
+        // console.log(i);
         let skillBar = bar.children[1];
         // get it's percentage
         skillBar.style.width = bar.getAttribute("data-percent");
@@ -87,7 +87,7 @@ window.onload = function () {
 
     }
     else {
-      console.log("contact");
+      // console.log("contact");
       sections[0].classList.remove("currentSection");
       sections[1].classList.remove("currentSection");
       sections[2].classList.remove("currentSection");
@@ -227,7 +227,7 @@ window.onload = function () {
 // random colors generator for skills bar
 function colorGenerator(){
   let hsl = 'hsl(' + (Math.floor(rangedRandom(0, 282))) + ',' + (rangedRandom(50, 100)) + '%,' + (rangedRandom(40, 80)) + '%)';
-  console.log("The color you get is: " + hsl);
+  // console.log("The color you get is: " + hsl);
   return hsl;
 }
 
