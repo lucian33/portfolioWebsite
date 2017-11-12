@@ -30,7 +30,7 @@ window.onload = function () {
     else if(scrolledPixel < 50 && navBar.classList.contains("scorolled")){
       document.getElementById('nav').classList.remove('scorolled');
     }
-    // console.log(scrolledPixel);
+    console.log(scrolledPixel);
     sectionDetection(scrolledPixel);
   }
 
@@ -39,19 +39,19 @@ window.onload = function () {
     // the target area's id is formated related to the section in nav bar
     let targetID = section.id + "Area";
     let targetElement = document.getElementById(targetID);
+    // smooth scroll
     section.addEventListener('click', ()=>{
       scrollToTarget(targetElement)
     });
     sectHeight.push(targetElement.offsetHeight);
   });
 
-  // smooth scroll
-  // console.log(sectHeight);
+
+  console.log(sectHeight);
 
   // detect position
   function sectionDetection(pixel){
-    // console.log(pixel/document.body.scrollHeight);
-    let ratio = pixel/document.body.scrollHeight;
+
     if(pixel < sectHeight[0]){
       sections[0].classList.add("currentSection");
       sections[1].classList.remove("currentSection");
@@ -78,7 +78,8 @@ window.onload = function () {
       });
       // console.log("proj");
     }
-    else if (pixel < (sectHeight[0] + sectHeight[1]) + sectHeight[2]) {
+    // if scrolled more than 90% of the sect2
+    else if (pixel < (sectHeight[0] + sectHeight[1] + sectHeight[2]) * 0.9) {
       sections[0].classList.remove("currentSection");
       sections[1].classList.remove("currentSection");
       sections[2].classList.add("currentSection");
@@ -97,10 +98,10 @@ window.onload = function () {
   }
 
   // click the back of card to open the modal
-  let modal = document.getElementById('proj1Modal');
+  // let modal = document.getElementById('proj1Modal');
   // select all project cards
   let projects = document.querySelectorAll('.projectCards>.iosCard');
-  // attach event to the back panel
+
   projects.forEach((proj) => {
     // for now I'll just open the same modal
     // in the future use ID to get corresponding modal
@@ -111,15 +112,18 @@ window.onload = function () {
 
     // expand the card
     proj.addEventListener('click', () => {
+      event.stopPropagation();
       proj.classList.add('fullScreen');
     });
 
     // add touch event to compatible with touch device
     proj.addEventListener('touchstart', (e)=>{
+      event.stopPropagation();
       proj.style.transform = "scale(0.975)";
     });
 
     proj.addEventListener('touchend', (e)=>{
+      event.stopPropagation();
       proj.style.transform = "scale(1)";
     });
 
@@ -133,76 +137,14 @@ window.onload = function () {
     });
   })
 
-  modal.querySelector('.close').onclick = closeModal;
-
-  // closure with self invoking function
-  // let carousel = (function(){
-  //   let wrapper = document.querySelector('.carouselWrapper');
-  //   // get the control element
-  //   let next = wrapper.querySelector('.next');
-  //   let prev = wrapper.querySelector('.prev');
-  //   // select slides
-  //   let slides = wrapper.querySelectorAll('.slides div');
-  //   // count the current index
-  //   let index = 0;
-  //   let slidesSum = slides.length;
-  //   // get current slide div element
-  //   let current = slides[0];
-  //
-  //   wrapper.classList.add('current');
-  //
-  //   // move the slide
-  //   function move(towards) {
-  //     // hide current slide
-  //     current.classList.remove('current');
-  //     // update current index
-  //     index = index + towards;
-  //     // move left
-  //     if (towards === -1 && index < 0) {
-  //       // loop to the max index
-  //       index = slidesSum - 1;
-  //     }
-  //     // move right
-  //     if (towards === 1 && !slides[index]) {
-  //       // loop to start
-  //       index = 0;
-  //     }
-  //
-  //     current = slides[index];
-  //
-  //     current.classList.add('current');
-  //
-  //   }
-  //
-  //   next.addEventListener('click', function(ev) {
-  //     console.log('next');
-  //     move(1);
-  //   });
-  //
-  //   prev.addEventListener('click', function(ev) {
-  //     console.log('prev');
-  //     move(-1);
-  //   });
-  //
-  //   move(0);
-  //
-  //   // automatic switch slide
-  //   setInterval(()=>{
-  //     move(1);
-  //   }, 3000);
-  //
-  // })();
-
-  // tooggle flip animation
-  let cards = document.querySelectorAll(".flipper");
-
-  cards.forEach((card)=>{
-    // add this so flip works on touch screen
-    card.addEventListener('touchstart', ()=>{
-      card.classList.toggle("flipped")
+  // ability to close the cards when click outside
+  document.querySelector("#projArea").addEventListener('click', (e)=>{
+    event.stopPropagation();
+    // remove all .fullScreen class
+    document.querySelector("#projArea").querySelectorAll(".iosCard").forEach((card)=>{
+      card.classList.remove("fullScreen");
     });
   });
-
 
 
   // random Color for skills bar

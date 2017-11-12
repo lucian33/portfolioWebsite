@@ -67,7 +67,7 @@ html, body{
 
 .navBar {
   // make sure the main content won't cover navBar
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   width: 100%;
   height: 10%;
@@ -98,9 +98,9 @@ html, body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    // font-family: 'Poiret One', cursive;
-    font-family: 'lato', sans-serif;
-    margin-bottom: 5px;
+    font-family: 'Poiret One', cursive;
+    // font-family: 'lato', sans-serif;
+    // margin-bottom: 5px;
     div {
       cursor: pointer;
     }
@@ -247,11 +247,13 @@ html, body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // opacity: 0;
-    -webkit-animation: wordEase 1s ease;
     animation: wordEase 1s ease;
     background-color: rgba(255, 255, 255, 0.2);
-
+    padding: 10px;
+    .br{
+      background-color: grey;
+      height: 1px;
+    }
     h2 {
       -webkit-animation-delay: 1s;
       margin: 2px;
@@ -392,13 +394,10 @@ html, body{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  // overflow-x: auto;
-  // overflow-y: hidden;
   width: 100%;
-  min-height: 100vh;
   background-color: ghostWhite;
   font-size: 1.3rem;
-  padding: 10% 0;
+  padding: 5% 0;
   .projectText {
     // align-self: flex-start;
     .br{
@@ -421,7 +420,7 @@ html, body{
       display: flex;
       flex-direction: column;
       transform-style: preserve-3d;
-      transition: 1s;
+      transition: 0.75s;
       width: 350px;
       height: 400px;
       margin: 10px;
@@ -450,8 +449,7 @@ html, body{
       width: 100%;
       h3{
         font-family: 'Lato', sans-serif;
-        // font-size: 38px;
-
+        font-size: 40px;
         font-weight: 900;
         margin: 20px 0 0 15px;
         line-height: 90%;
@@ -463,13 +461,19 @@ html, body{
       height: 0;
       align-self: flex-start;
       text-align: left;
+      font-size: 1rem;
+      color: grey;
       background-color: #bbc8dd;
       opacity: 0;
       transition: 0.25s;
-
+      padding: 10px 0;
       p{
+        line-height: 120%;
         font-size: 1.3rem;
         padding:0 15px;
+        b{
+          color: black;
+        }
       }
 
       // transition: height 1s;
@@ -484,6 +488,7 @@ html, body{
       .cardIcons{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: flex-start;
         .cardIcon{
           @include border-radius(15px);
@@ -491,7 +496,7 @@ html, body{
           height: 70px;
           margin: 10px;
           padding: 5px;
-          background-color: rgba(255, 255, 255, 0.8);
+          background-color: rgba(255, 255, 255, 0.9);
           img{
             width: 100%;
             height: 100%;
@@ -500,14 +505,16 @@ html, body{
       }
 
       .close{
+        text-shadow: none;
         position: absolute;
-        right: 15px;
+        right: 5px;
         top: 5px;
-        @include border-radius(50%);
-        // background-color: #fb9a9a;
-        color: #bbc8dd;
+        color: grey;
         cursor: pointer;
         opacity: 0;
+        i{
+          font-weight: bold;
+        }
       }
 
       .link{
@@ -537,21 +544,26 @@ html, body{
     .fullScreen{
       // expand the ios card
       cursor: pointer;
-      height: 600px;
+      // height: 600px;
       width: 500px;
-
+      height: auto;
+      transition: 0.5s;
+      .media{
+        height: 400px;
+      }
       // on small scrren,
       // take up full size
       @include mobile{
         height: 100vh;
         width: 100vw;
+        overflow-y: auto;
         margin: 0;
         padding: 0;
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 100;
-        transition: 1s;
+        z-index: 2;
+        // transition: 0.75s;
       }
 
       // top: calc(50% - 250px);
@@ -563,12 +575,14 @@ html, body{
 
       .description{
         background-color: white;
+        flex-grow: 1;
+        overflow-y: auto;
         height: auto;
         opacity: 1;
       }
 
       .close{
-        transition: 2s;
+        transition: 0.75s;
         opacity: 1;
       }
 
@@ -837,9 +851,7 @@ html, body{
   @include medium{
     height: 1100px;
   }
-  // @include mobile{
-  //   height: 1100px;
-  // }
+
   background-color: #eeeeeedb;
   // use this div as container to
   // absolute position the contacts info
@@ -847,10 +859,11 @@ html, body{
   &>div{
     position: absolute;
     top: -10%;
-
     display: flex;
     max-width: 1000px;
     height: 120%;
+    z-index: 2;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
     @include mobile{
       top: 0;
       height: 100%;
@@ -1199,6 +1212,10 @@ html, body{
       padding: 10px;
       @include border-radius(10px);
       border: 2px solid white;
+      a{
+        color: inherit;
+        text-decoration: none;
+      }
     }
     div:hover{
       transition: 1s;
@@ -1207,15 +1224,13 @@ html, body{
   }
 
   .right{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     // align-items: left;
     .social{
-
       a{
         text-decoration: none;
         color: inherit;
       }
-
     }
   }
 
