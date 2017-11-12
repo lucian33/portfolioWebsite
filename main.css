@@ -353,7 +353,7 @@ html, body {
           position: fixed;
           top: 0;
           left: 0;
-          z-index: 2; } }
+          z-index: 5; } }
       .multiColumn .projectCards .fullScreen .media {
         border-radius: 0; }
       .multiColumn .projectCards .fullScreen .description {
