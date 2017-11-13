@@ -153,7 +153,7 @@ window.onload = function () {
 
     let tile = bar.children[0];
     // give title a random color
-    color = colorGenerator();
+    let color = colorGenerator();
 
     tile.style.background = color;
 

@@ -492,9 +492,9 @@ html, body{
         justify-content: flex-start;
         .cardIcon{
           @include border-radius(15px);
-          width: 70px;
-          height: 70px;
-          margin: 10px;
+          width: 60px;
+          height: 60px;
+          margin: 5px;
           padding: 5px;
           background-color: rgba(255, 255, 255, 0.9);
           img{
@@ -1065,7 +1065,7 @@ html, body{
   	position:relative;
   	display:block;
   	margin-bottom:15px;
-  	// width:100%;
+  	// max-width:100%;
   	background:#eee;
   	height:35px;
   	@include border-radius(3px);
@@ -1074,6 +1074,9 @@ html, body{
   }
   .skillbar:hover{
     width: 110%;
+    @include mobile{
+      width: 100%;
+    }
     // max-width: 350px;
     box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.2);
   }
