@@ -52,6 +52,12 @@ $medium-size: 750px;
 	        transition-property:$width, $color;
 }
 
+@font-face{
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+}
 
 html, body{
   height: 100%;
@@ -462,11 +468,12 @@ html, body{
       color:white;
       width: 100%;
       h3{
-        font-family: 'Lato', sans-serif;
+        // font-family: 'Open Sans', sans-serif;
         font-size: 40px;
         font-weight: 900;
         margin: 20px 0 0 15px;
         line-height: 90%;
+        // text-shadow: none;
       }
     }
 
