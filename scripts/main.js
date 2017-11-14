@@ -114,15 +114,19 @@ window.onload = function () {
     proj.addEventListener('click', () => {
       event.stopPropagation();
       proj.classList.add('fullScreen');
+      // prevent body from moving by disable overflow
+      if (window.innerWidth <= 375){
+        document.body.style.overflow = "hidden";
+      }
     });
 
     // add touch event to compatible with touch device
-    proj.addEventListener('touchstart', (e)=>{
+    proj.addEventListener('touchstart', ()=>{
       event.stopPropagation();
       proj.style.transform = "scale(0.975)";
     });
 
-    proj.addEventListener('touchend', (e)=>{
+    proj.addEventListener('touchend', ()=>{
       event.stopPropagation();
       proj.style.transform = "scale(1)";
     });
@@ -134,6 +138,9 @@ window.onload = function () {
       // by trigger the proj.click
       event.stopPropagation();
       proj.classList.remove('fullScreen');
+      if (window.innerWidth <= 375){
+        document.body.style.overflow = "auto";
+      }
     });
   })
 
@@ -146,9 +153,7 @@ window.onload = function () {
     });
   });
 
-
   // random Color for skills bar
-
   document.querySelectorAll(".skillbar").forEach((bar)=>{
 
     let tile = bar.children[0];
