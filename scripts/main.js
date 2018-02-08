@@ -15,7 +15,8 @@ window.onload = function () {
   // GUESS I CAN DO A QUERY SELECT ALL INSTEAD
   let sections = document.querySelectorAll("#section div");
 
-  window.onscroll = function (e){
+  // fired when scroll
+  let scroll = function () {
     // get the pixel scorlled from top
     // to trigger the resize of navBar
     // scrolledPixel = document.getElementsByTagName('body')[0].scrollTop;
@@ -30,9 +31,60 @@ window.onload = function () {
     else if(scrolledPixel < 50 && navBar.classList.contains("scorolled")){
       document.getElementById('nav').classList.remove('scorolled');
     }
-    console.log(scrolledPixel);
+    // console.log(scrolledPixel);
     sectionDetection(scrolledPixel);
+  };
+
+  // cross-broswer compatible requestAnimationFrame
+  var raf = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame;
+
+  var lastScrollTop = Math.max(document.documentElement.scrollTop, document.getElementsByTagName('body')[0].scrollTop);
+
+  if (raf) {
+      loop();
   }
+  else {
+    // request animation frame not supported
+    window.onscroll = function (e){
+      // get the pixel scorlled from top
+      // to trigger the resize of navBar
+      // scrolledPixel = document.getElementsByTagName('body')[0].scrollTop;
+      // issue with chrome version on this
+      scrolledPixel = Math.max(document.documentElement.scrollTop, document.getElementsByTagName('body')[0].scrollTop);
+      // console.log(document.body.scrollTop);
+      // change nav size when scorolled
+      if(scrolledPixel > 50 && navBar.classList.contains("navBar")){
+        // console.log("OK");
+        document.getElementById('nav').classList.add('scorolled');
+      }
+      else if(scrolledPixel < 50 && navBar.classList.contains("scorolled")){
+        document.getElementById('nav').classList.remove('scorolled');
+      }
+      // console.log(scrolledPixel);
+      sectionDetection(scrolledPixel);
+    }
+  }
+
+  function loop() {
+      var scrollTop = Math.max(document.documentElement.scrollTop, document.getElementsByTagName('body')[0].scrollTop);
+      // if not scrolled, skip the scoll function
+      if (lastScrollTop === scrollTop) {
+          raf(loop);
+          return;
+      }
+      // else, fire the scorll function
+      else {
+          lastScrollTop = scrollTop;
+          // fire scroll function if scrolls vertically
+          scroll();
+          raf(loop);
+      }
+  }
+
 
   sections.forEach((section, index)=>{
     let id = section.id;
