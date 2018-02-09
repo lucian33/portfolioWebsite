@@ -74,6 +74,9 @@ html, body{
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .sepLine{
@@ -432,13 +435,15 @@ html, body{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-
+    -webkit-transform: translateZ(0);
     .iosCard{
       // flex: 1;
       position: relative;
       display: flex;
       flex-direction: column;
       transform-style: preserve-3d;
+      // enable GPU
+      -webkit-transform: translateZ(0);
       transition: 0.75s;
       width: 350px;
       height: 400px;
@@ -449,6 +454,7 @@ html, body{
 
     .iosCard:hover{
       cursor: pointer;
+      -webkit-transform: translateZ(0);
       transform: scale3d(0.975, 0.975, 0.975);
     }
 
@@ -805,10 +811,9 @@ html, body{
 
 }
 
-.flipped{
-  transform: rotateY(180deg);
-
-}
+// .flipped{
+//   transform: rotateY(180deg);
+// }
 
 // https://www.w3schools.com/howto/howto_css_modals.asp
 // the modal container
