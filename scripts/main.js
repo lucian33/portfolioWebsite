@@ -22,7 +22,7 @@ window.onload = function () {
     // scrolledPixel = document.getElementsByTagName('body')[0].scrollTop;
     // issue with chrome version on this
     scrolledPixel = Math.max(document.documentElement.scrollTop, document.getElementsByTagName('body')[0].scrollTop);
-    // console.log(document.body.scrollTop);
+    console.log(document.body.scrollTop);
     // change nav size when scorolled
     if(scrolledPixel > 50 && navBar.classList.contains("navBar")){
       // console.log("OK");
@@ -32,6 +32,7 @@ window.onload = function () {
       document.getElementById('nav').classList.remove('scorolled');
     }
     // console.log(scrolledPixel);
+    // console.log("!");
     sectionDetection(scrolledPixel);
   };
 
@@ -48,6 +49,7 @@ window.onload = function () {
       loop();
   }
   else {
+    console.log("RAF not supported");
     // request animation frame not supported
     window.onscroll = function (e){
       // get the pixel scorlled from top

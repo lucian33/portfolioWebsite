@@ -70,7 +70,7 @@ html, body{
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  overflow-y: scroll; /* has to be scroll, not auto */
+  // overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
 
