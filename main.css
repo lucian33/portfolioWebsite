@@ -15,9 +15,9 @@ html, body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  -webkit-overflow-scrolling: touch;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden; }
+  overflow-y: scroll;
+  /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch; }
 
 .sepLine {
   height: 1px;
@@ -247,21 +247,18 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
-    -webkit-transform: translateZ(0); }
+    align-items: center; }
     .multiColumn .projectCards .iosCard {
       position: relative;
       display: flex;
       flex-direction: column;
       transform-style: preserve-3d;
-      -webkit-transform: translateZ(0);
       transition: 0.75s;
       width: 350px;
       height: 400px;
       margin: 10px; }
     .multiColumn .projectCards .iosCard:hover {
       cursor: pointer;
-      -webkit-transform: translateZ(0);
       transform: scale3d(0.975, 0.975, 0.975); }
     .multiColumn .projectCards .media {
       font-weight: bold;
@@ -359,7 +356,8 @@ html, body {
       cursor: pointer;
       width: 500px;
       height: auto;
-      transition: 0.5s; }
+      transition: 0.5s;
+      -webkit-transform: translateZ(0); }
       .multiColumn .projectCards .fullScreen .media {
         height: 400px; }
       @media (max-width: 414px) {
