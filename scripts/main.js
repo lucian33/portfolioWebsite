@@ -22,7 +22,7 @@ window.onload = function () {
     // scrolledPixel = document.getElementsByTagName('body')[0].scrollTop;
     // issue with chrome version on this
     scrolledPixel = Math.max(document.documentElement.scrollTop, document.getElementsByTagName('body')[0].scrollTop);
-    console.log(document.body.scrollTop);
+    // console.log(scrolledPixel);
     // change nav size when scorolled
     if(scrolledPixel > 50 && navBar.classList.contains("navBar")){
       // console.log("OK");
@@ -87,21 +87,25 @@ window.onload = function () {
       }
   }
 
+  // update every time onresize and when opens the webpage
+  window.onresize = calculteSects;
+  calculteSects();
 
-  sections.forEach((section, index)=>{
-    let id = section.id;
-    // the target area's id is formated related to the section in nav bar
-    let targetID = section.id + "Area";
-    let targetElement = document.getElementById(targetID);
-    // smooth scroll
-    section.addEventListener('click', ()=>{
-      scrollToTarget(targetElement)
+  // helper function to calculate section height
+  function calculteSects(){
+    sections.forEach((section, index)=>{
+      let id = section.id;
+      // the target area's id is formated related to the section in nav bar
+      let targetID = section.id + "Area";
+      let targetElement = document.getElementById(targetID);
+      // smooth scroll
+      section.addEventListener('click', ()=>{
+        scrollToTarget(targetElement)
+      });
+      sectHeight.push(targetElement.offsetHeight);
     });
-    sectHeight.push(targetElement.offsetHeight);
-  });
-
-
-  console.log(sectHeight);
+    console.log(sectHeight);
+  }
 
   // detect position
   function sectionDetection(pixel){
@@ -171,13 +175,17 @@ window.onload = function () {
       // prevent body from moving by disable overflow
       if (window.innerWidth <= 375){
         document.body.style.overflow = "hidden";
+        document.overflow = "hidden";
+
       }
     });
 
     // add touch event to compatible with touch device
     proj.addEventListener('touchstart', ()=>{
       event.stopPropagation();
-      proj.style.transform = "scale(0.975)";
+      if (!proj.classList.contains('fullScreen')){
+          proj.style.transform = "scale(0.975)";
+      }
     });
 
     proj.addEventListener('touchend', ()=>{
@@ -194,6 +202,7 @@ window.onload = function () {
       proj.classList.remove('fullScreen');
       if (window.innerWidth <= 375){
         document.body.style.overflow = "auto";
+        // document.body.style.position = "default";
       }
     });
   })
