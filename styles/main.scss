@@ -36,6 +36,13 @@ $medium-size: 750px;
           background-size: $type;
 }
 
+@mixin background-sizes($width, $height) {
+  -webkit-background-size: $width $height;
+     -moz-background-size: $width $height;
+      -ms-background-size: $width $height;
+          background-size: $width $height;
+}
+
 @mixin transition($time, $style){
   -webkit-transition:$time, $style;
      -moz-transition:$time, $style;
@@ -613,26 +620,26 @@ html, body{
 
     #proj1 .media{
       background-image: url("assets/p1.gif");
-      @include background-size(auto);
+      @include background-sizes(500px, 500px);
+      // background-size: 100px 100px;
     }
 
     #proj2 .media{
       background-image: url("assets/TMDB.gif");
-      @include background-size(cover);
+      @include background-sizes(500px, 500px);
       h3{
         // color: #2d2d2d;
       }
     }
 
-    #proj3 .media{
-      background-image: url("assets/music.jpg");
-      @include background-size(cover);
-
-    }
+    // #proj3 .media{
+    //   background-image: url("assets/music.jpg");
+    //   @include background-sizes(500px, 500px);
+    // }
 
     #proj4 .media{
       background-image: url("assets/cumtd.gif");
-      @include background-size(cover);
+      @include background-sizes(100%, 100%);
       h3{
         color: #000000;
         text-shadow: none;

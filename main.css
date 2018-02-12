@@ -382,28 +382,22 @@ html, body {
         opacity: 1; }
     .multiColumn .projectCards #proj1 .media {
       background-image: url("assets/p1.gif");
-      -webkit-background-size: auto;
-      -moz-background-size: auto;
-      -ms-background-size: auto;
-      background-size: auto; }
+      -webkit-background-size: 500px 500px;
+      -moz-background-size: 500px 500px;
+      -ms-background-size: 500px 500px;
+      background-size: 500px 500px; }
     .multiColumn .projectCards #proj2 .media {
       background-image: url("assets/TMDB.gif");
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -ms-background-size: cover;
-      background-size: cover; }
-    .multiColumn .projectCards #proj3 .media {
-      background-image: url("assets/music.jpg");
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -ms-background-size: cover;
-      background-size: cover; }
+      -webkit-background-size: 500px 500px;
+      -moz-background-size: 500px 500px;
+      -ms-background-size: 500px 500px;
+      background-size: 500px 500px; }
     .multiColumn .projectCards #proj4 .media {
       background-image: url("assets/cumtd.gif");
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -ms-background-size: cover;
-      background-size: cover; }
+      -webkit-background-size: 100% 100%;
+      -moz-background-size: 100% 100%;
+      -ms-background-size: 100% 100%;
+      background-size: 100% 100%; }
       .multiColumn .projectCards #proj4 .media h3 {
         color: #000000;
         text-shadow: none; }
