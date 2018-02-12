@@ -639,7 +639,7 @@ html, body{
 
     #proj4 .media{
       background-image: url("assets/cumtd.gif");
-      @include background-sizes(100%, 100%);
+      @include background-sizes(500px, 500px);
       h3{
         color: #000000;
         text-shadow: none;
