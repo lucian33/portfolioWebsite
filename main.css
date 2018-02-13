@@ -251,7 +251,7 @@ html, body {
       display: flex;
       flex-direction: column;
       transform-style: preserve-3d;
-      transition: 0.75s;
+      transition: all 0.5s;
       width: 350px;
       height: 400px;
       margin: 10px;
@@ -289,7 +289,7 @@ html, body {
       color: grey;
       background-color: #bbc8dd;
       opacity: 0;
-      transition: 0.25s;
+      display: hidden;
       padding: 10px 0; }
       .multiColumn .projectCards .description p {
         line-height: 120%;
@@ -355,8 +355,8 @@ html, body {
       cursor: pointer;
       width: 500px;
       height: auto;
-      transition: 0.5s;
-      -webkit-transform: translateZ(0); }
+      -webkit-transform: translateZ(0);
+      transition: all 0.5s; }
       .multiColumn .projectCards .fullScreen .media {
         height: 400px; }
       @media (max-width: 414px) {
@@ -377,6 +377,9 @@ html, body {
         flex-grow: 1;
         overflow-y: auto;
         height: auto;
+        display: block;
+        transition: opacity 1s; }
+      .multiColumn .projectCards .fullScreen .open-active {
         opacity: 1; }
       .multiColumn .projectCards .fullScreen .close {
         transition: 0.75s;

@@ -446,7 +446,7 @@ html, body{
       display: flex;
       flex-direction: column;
       transform-style: preserve-3d;
-      transition: 0.75s;
+      transition: all 0.5s;
       width: 350px;
       height: 400px;
       margin: 10px;
@@ -493,7 +493,8 @@ html, body{
       color: grey;
       background-color: #bbc8dd;
       opacity: 0;
-      transition: 0.25s;
+      display: hidden;
+      // transition: 0.25s;
       padding: 10px 0;
       p{
         line-height: 120%;
@@ -503,9 +504,6 @@ html, body{
           color: black;
         }
       }
-
-      // transition: height 1s;
-      // transition: opacity 0.75s;
     }
 
     .contentContainer{
@@ -575,8 +573,8 @@ html, body{
       // height: 600px;
       width: 500px;
       height: auto;
-      transition: 0.5s;
       -webkit-transform: translateZ(0);
+      transition: all 0.5s;
       .media{
         height: 400px;
       }
@@ -595,9 +593,6 @@ html, body{
         // transition: 0.75s;
       }
 
-      // top: calc(50% - 250px);
-      // left: calc(50% - 175px);
-      // remove border-radius
       .media{
         border-radius: 0;
       }
@@ -607,6 +602,12 @@ html, body{
         flex-grow: 1;
         overflow-y: auto;
         height: auto;
+        display: block;
+        transition: opacity 1s;
+      }
+
+      // change display and opacity in two steps
+      .open-active{
         opacity: 1;
       }
 
@@ -614,8 +615,6 @@ html, body{
         transition: 0.75s;
         opacity: 1;
       }
-
-      // background-color: #eaeaea;
 
     }
 

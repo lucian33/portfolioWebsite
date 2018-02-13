@@ -172,17 +172,23 @@ window.onload = function () {
     proj.addEventListener('click', () => {
       event.stopPropagation();
       proj.classList.add('fullScreen');
+
+      // apply opacity transition after fullScreen class is added
+      if (proj.classList.contains('fullScreen') && proj.querySelector('.description').classList.add('open-active'));
+
       // prevent body from moving by disable overflow
       if (window.innerWidth <= 375){
         document.body.style.overflow = "hidden";
         document.overflow = "hidden";
-
       }
+
     });
 
     // add touch event to compatible with touch device
     proj.addEventListener('touchstart', ()=>{
       event.stopPropagation();
+      // apply opacity transition after fullScreen class is added
+      if (proj.classList.contains('fullScreen') && proj.querySelector('.description').classList.add('open-active'));
       if (!proj.classList.contains('fullScreen')){
           proj.style.transform = "scale(0.975)";
       }
@@ -199,6 +205,7 @@ window.onload = function () {
       // so the card won't open again
       // by trigger the proj.click
       event.stopPropagation();
+      proj.classList.remove('open-active');
       proj.classList.remove('fullScreen');
       if (window.innerWidth <= 375){
         document.body.style.overflow = "auto";
