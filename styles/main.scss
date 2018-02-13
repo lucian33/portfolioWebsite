@@ -621,26 +621,26 @@ html, body{
 
     #proj1 .media{
       background-image: url("assets/p1.gif");
-      @include background-sizes(500px, 500px);
+      @include background-sizes(500px, 400px);
       // background-size: 100px 100px;
     }
 
     #proj2 .media{
       background-image: url("assets/TMDB.gif");
-      @include background-sizes(500px, 500px);
+      @include background-sizes(500px, 400px);
       h3{
         // color: #2d2d2d;
       }
     }
 
-    // #proj3 .media{
-    //   background-image: url("assets/music.jpg");
-    //   @include background-sizes(500px, 500px);
-    // }
+    #proj3 .media{
+      background-image: url("assets/PhotoMix.jpg");
+      @include background-sizes(500px, 400px);
+    }
 
     #proj4 .media{
       background-image: url("assets/cumtd.gif");
-      @include background-sizes(500px, 500px);
+      @include background-sizes(500px, 400px);
       h3{
         color: #000000;
         text-shadow: none;

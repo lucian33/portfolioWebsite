@@ -386,22 +386,28 @@ html, body {
         opacity: 1; }
     .multiColumn .projectCards #proj1 .media {
       background-image: url("assets/p1.gif");
-      -webkit-background-size: 500px 500px;
-      -moz-background-size: 500px 500px;
-      -ms-background-size: 500px 500px;
-      background-size: 500px 500px; }
+      -webkit-background-size: 500px 400px;
+      -moz-background-size: 500px 400px;
+      -ms-background-size: 500px 400px;
+      background-size: 500px 400px; }
     .multiColumn .projectCards #proj2 .media {
       background-image: url("assets/TMDB.gif");
-      -webkit-background-size: 500px 500px;
-      -moz-background-size: 500px 500px;
-      -ms-background-size: 500px 500px;
-      background-size: 500px 500px; }
+      -webkit-background-size: 500px 400px;
+      -moz-background-size: 500px 400px;
+      -ms-background-size: 500px 400px;
+      background-size: 500px 400px; }
+    .multiColumn .projectCards #proj3 .media {
+      background-image: url("assets/PhotoMix.jpg");
+      -webkit-background-size: 500px 400px;
+      -moz-background-size: 500px 400px;
+      -ms-background-size: 500px 400px;
+      background-size: 500px 400px; }
     .multiColumn .projectCards #proj4 .media {
       background-image: url("assets/cumtd.gif");
-      -webkit-background-size: 500px 500px;
-      -moz-background-size: 500px 500px;
-      -ms-background-size: 500px 500px;
-      background-size: 500px 500px; }
+      -webkit-background-size: 500px 400px;
+      -moz-background-size: 500px 400px;
+      -ms-background-size: 500px 400px;
+      background-size: 500px 400px; }
       .multiColumn .projectCards #proj4 .media h3 {
         color: #000000;
         text-shadow: none; }
