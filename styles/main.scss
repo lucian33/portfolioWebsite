@@ -433,6 +433,7 @@ html, body{
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    transform: translate(0, 0, 0);
     // ios11 app store like cards
     .projectCards{
       // width: 80%;
@@ -618,7 +619,7 @@ html, body{
       }
 
       #proj2 .media{
-        background-image: url("assets/TMDB.jpg");
+        background-image: url("assets/tmdb.jpg");
         @include background-sizes(500px, 400px);
       }
 
