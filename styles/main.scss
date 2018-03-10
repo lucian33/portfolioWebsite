@@ -619,7 +619,7 @@ html, body{
       }
 
       #proj2 .media{
-        background-image: url("assets/tmdb.jpg");
+        background-image: url("assets/moviedb.jpg");
         @include background-sizes(500px, 400px);
       }
 
@@ -670,7 +670,7 @@ html, body{
     }
 
 
-    .panel1 { background-image:url("assets/terrainGeneration.jpg"); }
+    .panel1 { background-image:url("assets/terrain.jpg"); }
     .panel2 { background-image:url(); }
     .panel3 { background-image:url(); }
 

@@ -390,7 +390,7 @@ html, body {
         -ms-background-size: 500px 400px;
         background-size: 500px 400px; }
       .multiColumn .webDev .projectCards #proj2 .media {
-        background-image: url("assets/tmdb.jpg");
+        background-image: url("assets/moviedb.jpg");
         -webkit-background-size: 500px 400px;
         -moz-background-size: 500px 400px;
         -ms-background-size: 500px 400px;
@@ -434,7 +434,7 @@ html, body {
       display: flex;
       flex-direction: column; }
     .multiColumn .cgRegion .panel1 {
-      background-image: url("assets/terrainGeneration.jpg"); }
+      background-image: url("assets/terrain.jpg"); }
     .multiColumn .cgRegion .panel2 {
       background-image: url(); }
     .multiColumn .cgRegion .panel3 {
