@@ -231,218 +231,184 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
   background-color: ghostWhite;
   font-size: 1.3rem;
-  padding: 5% 0; }
+  padding: 5% 0;
+  align-items: center; }
   .multiColumn .projectText .br {
     width: 50%;
     height: 5px;
     background-color: pink; }
-  .multiColumn .projectCards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center; }
-    .multiColumn .projectCards .iosCard {
-      position: relative;
+  .multiColumn .webDev {
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; }
+    .multiColumn .webDev .projectCards {
       display: flex;
-      flex-direction: column;
-      transform-style: preserve-3d;
-      transition: all 0.5s;
-      width: 350px;
-      height: 400px;
-      margin: 10px;
-      -webkit-transform: translate3d(0, 0, 0); }
-    .multiColumn .projectCards .iosCard:hover {
-      cursor: pointer;
-      transform: scale3d(0.975, 0.975, 0.975); }
-    .multiColumn .projectCards .media {
-      font-weight: bold;
-      display: flex;
-      position: relative;
-      height: 100%;
-      width: 100%;
-      -webkit-border-radius: 15px;
-      -moz-border-radius: 15px;
-      -ms-border-radius: 15px;
-      border-radius: 15px;
-      flex-direction: column;
-      text-align: left;
-      justify-content: start;
-      font-size: 2.4rem;
-      color: white;
-      width: 100%; }
-      .multiColumn .projectCards .media h3 {
-        font-size: 40px;
-        font-weight: 900;
-        margin: 20px 0 0 15px;
-        line-height: 90%; }
-    .multiColumn .projectCards .description {
-      width: 100%;
-      height: 0;
-      align-self: flex-start;
-      text-align: left;
-      font-size: 1rem;
-      color: grey;
-      background-color: #bbc8dd;
-      opacity: 0;
-      display: hidden;
-      padding: 10px 0; }
-      .multiColumn .projectCards .description p {
-        line-height: 120%;
-        font-size: 1.3rem;
-        padding: 0 15px; }
-        .multiColumn .projectCards .description p b {
-          color: black; }
-    .multiColumn .projectCards .contentContainer {
-      text-shadow: 1px 1px 5px rgba(0, 0, 22, 0.8);
-      height: 100%;
-      width: 100%; }
-      .multiColumn .projectCards .contentContainer .cardIcons {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center; }
+      .multiColumn .webDev .projectCards .iosCard {
+        position: relative;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start; }
-        .multiColumn .projectCards .contentContainer .cardIcons .cardIcon {
-          -webkit-border-radius: 15px;
-          -moz-border-radius: 15px;
-          -ms-border-radius: 15px;
-          border-radius: 15px;
-          width: 60px;
-          height: 60px;
-          margin: 5px;
-          padding: 5px;
-          background-color: rgba(255, 255, 255, 0.9); }
-          .multiColumn .projectCards .contentContainer .cardIcons .cardIcon img {
-            width: 100%;
-            height: 100%; }
-      .multiColumn .projectCards .contentContainer .close {
-        text-shadow: none;
-        position: absolute;
-        right: 5px;
-        top: 5px;
+        flex-direction: column;
+        transition: all 0.5s;
+        width: 350px;
+        height: 400px;
+        margin: 10px; }
+      .multiColumn .webDev .projectCards .iosCard:hover {
+        cursor: pointer;
+        transform: scale3d(0.975, 0.975, 0.975); }
+      .multiColumn .webDev .projectCards .media {
+        font-weight: bold;
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        border-radius: 15px;
+        flex-direction: column;
+        text-align: left;
+        justify-content: start;
+        font-size: 2.4rem;
+        color: white;
+        width: 100%; }
+        .multiColumn .webDev .projectCards .media h3 {
+          font-size: 40px;
+          font-weight: 900;
+          margin: 20px 0 0 15px;
+          line-height: 90%; }
+      .multiColumn .webDev .projectCards .description {
+        width: 100%;
+        height: 0;
+        align-self: flex-start;
+        text-align: left;
+        font-size: 1rem;
         color: grey;
+        background-color: #bbc8dd;
+        opacity: 0;
+        display: hidden;
+        padding: 10px 0; }
+        .multiColumn .webDev .projectCards .description p {
+          line-height: 120%;
+          font-size: 1.3rem;
+          padding: 0 15px; }
+          .multiColumn .webDev .projectCards .description p b {
+            color: black; }
+      .multiColumn .webDev .projectCards .contentContainer {
+        text-shadow: 1px 1px 5px rgba(0, 0, 22, 0.8);
+        height: 100%;
+        width: 100%; }
+        .multiColumn .webDev .projectCards .contentContainer .cardIcons {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start; }
+          .multiColumn .webDev .projectCards .contentContainer .cardIcons .cardIcon {
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            border-radius: 15px;
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.9); }
+            .multiColumn .webDev .projectCards .contentContainer .cardIcons .cardIcon img {
+              width: 100%;
+              height: 100%; }
+        .multiColumn .webDev .projectCards .contentContainer .close {
+          text-shadow: none;
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          color: grey;
+          cursor: pointer;
+          opacity: 0; }
+          .multiColumn .webDev .projectCards .contentContainer .close i {
+            font-weight: bold; }
+        .multiColumn .webDev .projectCards .contentContainer .link {
+          cursor: pointer;
+          background-color: white;
+          padding: 5px;
+          width: 60px;
+          position: absolute;
+          font-size: 1.5rem;
+          right: 10px;
+          bottom: 10px;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          -ms-border-radius: 20px;
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .multiColumn .webDev .projectCards .contentContainer .link a {
+            display: inline-block;
+            font-size: 14px;
+            text-decoration: none;
+            color: #4284f5;
+            text-shadow: none; }
+      .multiColumn .webDev .projectCards .fullScreen {
         cursor: pointer;
-        opacity: 0; }
-        .multiColumn .projectCards .contentContainer .close i {
-          font-weight: bold; }
-      .multiColumn .projectCards .contentContainer .link {
-        cursor: pointer;
-        background-color: white;
-        padding: 5px;
-        width: 60px;
-        position: absolute;
-        font-size: 1.5rem;
-        right: 10px;
-        bottom: 10px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-        .multiColumn .projectCards .contentContainer .link a {
-          display: inline-block;
-          font-size: 14px;
-          text-decoration: none;
-          color: #4284f5;
-          text-shadow: none; }
-    .multiColumn .projectCards .fullScreen {
-      cursor: pointer;
-      width: 500px;
-      height: auto;
-      -webkit-transform: translateZ(0);
-      transition: all 0.5s; }
-      .multiColumn .projectCards .fullScreen .media {
-        height: 400px; }
-      @media (max-width: 414px) {
-        .multiColumn .projectCards .fullScreen {
-          height: 100vh;
-          width: 100vw;
+        width: 500px;
+        height: auto; }
+        .multiColumn .webDev .projectCards .fullScreen .media {
+          height: 400px; }
+        @media (max-width: 414px) {
+          .multiColumn .webDev .projectCards .fullScreen {
+            height: 100vh;
+            width: 100vw;
+            overflow-y: auto;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5; } }
+        .multiColumn .webDev .projectCards .fullScreen .media {
+          border-radius: 0; }
+        .multiColumn .webDev .projectCards .fullScreen .description {
+          background-color: white;
+          flex-grow: 1;
           overflow-y: auto;
-          margin: 0;
-          padding: 0;
-          position: fixed;
-          top: 0;
-          left: 0;
-          z-index: 5; } }
-      .multiColumn .projectCards .fullScreen .media {
-        border-radius: 0; }
-      .multiColumn .projectCards .fullScreen .description {
-        background-color: white;
-        flex-grow: 1;
-        overflow-y: auto;
-        height: auto;
-        display: block;
-        transition: opacity 1s; }
-      .multiColumn .projectCards .fullScreen .open-active {
-        opacity: 1; }
-      .multiColumn .projectCards .fullScreen .close {
-        transition: 0.75s;
-        opacity: 1; }
-    .multiColumn .projectCards #proj1 .media {
-      background-image: url("assets/p1.gif");
-      -webkit-background-size: 500px 400px;
-      -moz-background-size: 500px 400px;
-      -ms-background-size: 500px 400px;
-      background-size: 500px 400px; }
-    .multiColumn .projectCards #proj2 .media {
-      background-image: url("assets/TMDB.gif");
-      -webkit-background-size: 500px 400px;
-      -moz-background-size: 500px 400px;
-      -ms-background-size: 500px 400px;
-      background-size: 500px 400px; }
-    .multiColumn .projectCards #proj3 .media {
-      background-image: url("assets/PhotoMix.jpg");
-      -webkit-background-size: 500px 400px;
-      -moz-background-size: 500px 400px;
-      -ms-background-size: 500px 400px;
-      background-size: 500px 400px; }
-    .multiColumn .projectCards #proj4 .media {
-      background-image: url("assets/cumtd.gif");
-      -webkit-background-size: 500px 400px;
-      -moz-background-size: 500px 400px;
-      -ms-background-size: 500px 400px;
-      background-size: 500px 400px; }
-      .multiColumn .projectCards #proj4 .media h3 {
-        color: #000000;
-        text-shadow: none; }
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); }
-  .modal > div {
-    margin: 10% auto;
-    width: 90%;
-    min-width: 350px;
-    height: 100%; }
-    .modal > div .content {
-      display: flex;
-      flex-direction: column;
-      background-color: white;
-      height: 100%; }
-      .modal > div .content .close {
-        align-self: flex-end;
-        width: 20px;
-        height: 20px;
-        margin: 20px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        color: #fb9a9a;
-        cursor: pointer; }
+          height: auto;
+          display: block;
+          transition: opacity 1s; }
+        .multiColumn .webDev .projectCards .fullScreen .open-active {
+          opacity: 1; }
+        .multiColumn .webDev .projectCards .fullScreen .close {
+          transition: 0.5s;
+          opacity: 1; }
+      .multiColumn .webDev .projectCards #proj1 .media {
+        background-image: url("assets/p1.jpg");
+        -webkit-background-size: 500px 400px;
+        -moz-background-size: 500px 400px;
+        -ms-background-size: 500px 400px;
+        background-size: 500px 400px; }
+      .multiColumn .webDev .projectCards #proj2 .media {
+        background-image: url("assets/TMDB.jpg");
+        -webkit-background-size: 500px 400px;
+        -moz-background-size: 500px 400px;
+        -ms-background-size: 500px 400px;
+        background-size: 500px 400px; }
+      .multiColumn .webDev .projectCards #proj3 .media {
+        background-image: url("assets/PhotoMix.jpg");
+        -webkit-background-size: 500px 400px;
+        -moz-background-size: 500px 400px;
+        -ms-background-size: 500px 400px;
+        background-size: 500px 400px; }
+      .multiColumn .webDev .projectCards #proj4 .media {
+        background-image: url("assets/cumtd.jpg");
+        -webkit-background-size: 500px 400px;
+        -moz-background-size: 500px 400px;
+        -ms-background-size: 500px 400px;
+        background-size: 500px 400px; }
+        .multiColumn .webDev .projectCards #proj4 .media h3 {
+          color: #000000;
+          text-shadow: none; }
 
 .favorites {
   position: relative;
