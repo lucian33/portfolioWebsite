@@ -215,10 +215,10 @@ window.onload = function () {
   })
 
   // ability to close the cards when click outside
-  document.querySelector("#projArea").addEventListener('click', (e)=>{
+  document.querySelector(".webDev").addEventListener('click', (e)=>{
     event.stopPropagation();
     // remove all .fullScreen class
-    document.querySelector("#projArea").querySelectorAll(".iosCard").forEach((card)=>{
+    document.querySelector(".webDev").querySelectorAll(".iosCard").forEach((card)=>{
       card.classList.remove("fullScreen");
     });
   });
@@ -238,6 +238,23 @@ window.onload = function () {
 
   });
 
+
+  // panels open animations
+  const panels = document.querySelectorAll('.panel');
+
+  function toggleOpen() {
+    this.classList.toggle('open');
+  }
+
+  function toggleActive(e) {
+    console.log(e.propertyName);
+    if (e.propertyName.includes('flex')) {
+      this.classList.toggle('open-active');
+    }
+  }
+
+  panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+  panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 
 }
 
