@@ -645,11 +645,12 @@ html, body{
       min-height:80vh;
       overflow: hidden;
       display: flex;
+      max-width: 90vw;
     }
 
     .panel {
       background: white;
-      box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
       color:white;
       text-align: center;
       align-items:center;
