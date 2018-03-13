@@ -645,7 +645,8 @@ html, body{
       min-height:80vh;
       overflow: hidden;
       display: flex;
-      max-width: 90vw;
+      flex-direction: column;
+      max-width: 95vw;
     }
 
     .panel {
@@ -664,6 +665,7 @@ html, body{
       background-size:cover;
       background-position:center;
       flex: 1;
+      width:95vw;
       justify-content: center;
       display: flex;
       flex-direction: column;
@@ -671,7 +673,7 @@ html, body{
 
 
     .panel1 { background-image:url("assets/terrain.jpg"); }
-    .panel2 { background-image:url(); }
+    .panel2 { background-image:url("assets/envmapping.jpg"); }
     .panel3 { background-image:url(); }
 
     /* Flex Items */
@@ -685,23 +687,35 @@ html, body{
       align-items: center;
     }
 
-    .panel > *:first-child { transform: translateY(-100%); }
-    .panel.open-active > *:first-child { transform: translateY(0); }
-    .panel > *:last-child { transform: translateY(100%); }
-    .panel.open-active > *:last-child { transform: translateY(0); }
+    .panel > *:first-child {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    .panel.open-active > *:first-child {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .panel > *:last-child {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    .panel.open-active > *:last-child {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .panel p {
       text-transform: uppercase;
       text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-      font-size: 1.5em;
+      font-size: 3rem;
     }
     .panel p:nth-child(2) {
-      font-size: 1.5em;
+      font-size: 3rem;
     }
 
     .panel.open {
       flex: 5;
-      font-size:2em;
+      font-size:4.5rem;
     }
 
   }
