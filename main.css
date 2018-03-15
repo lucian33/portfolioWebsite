@@ -87,20 +87,22 @@ html, body {
   flex-direction: column; }
   .mainContent > div {
     margin: 10px 0; }
-  .mainContent .fixedBg {
-    background-image: url("assets/MountainPeak.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; }
+  .mainContent > .fixedBg {
+    background-image: url("assets/MountainPeak.jpg"); }
+
+.fixedBg {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
 
 .infoSession {
   height: 25%;
@@ -413,7 +415,8 @@ html, body {
   .multiColumn .cgRegion {
     /* Flex Items */ }
     .multiColumn .cgRegion .panels {
-      min-height: 80vh;
+      height: 100%;
+      min-height: 100vh;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -436,11 +439,17 @@ html, body {
       display: flex;
       flex-direction: column; }
     .multiColumn .cgRegion .panel1 {
-      background-image: url("assets/terrain.jpg"); }
+      background-image: url("assets/terrain.jpg");
+      background-position: center;
+      background-repeat: no-repeat; }
     .multiColumn .cgRegion .panel2 {
-      background-image: url("assets/envmapping.jpg"); }
+      background-image: url("assets/envmapping.jpg");
+      background-position: center;
+      background-repeat: no-repeat; }
     .multiColumn .cgRegion .panel3 {
-      background-image: url(); }
+      background-image: url("assets/overview.jpg");
+      background-position: center;
+      background-repeat: no-repeat; }
     .multiColumn .cgRegion .panel > * {
       margin: 0;
       width: 100%;
@@ -465,10 +474,12 @@ html, body {
       text-transform: uppercase;
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 3rem; }
+      .multiColumn .cgRegion .panel p a {
+        color: black; }
     .multiColumn .cgRegion .panel p:nth-child(2) {
       font-size: 3rem; }
     .multiColumn .cgRegion .panel.open {
-      flex: 5;
+      flex: 8;
       font-size: 4.5rem; }
 
 .favorites {
