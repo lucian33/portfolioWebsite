@@ -285,8 +285,8 @@ html, body{
 
   .carousel-cell{
 
-    height: 60vh;
-    min-width: 325px;
+    height: 540px;
+    min-width: 333px;
     width: 60%;
     // padding: 15px;
 
@@ -296,11 +296,12 @@ html, body{
       justify-content: space-evenly;
 
       background-color: hsla(0,0%,100%,.85);
-      padding: 0px 15px;
-      height: 55vh;
+      padding: 0px 15px 0px 20px;
+      height: 100%;
       margin: 0px 5px;
       border-radius: 15px;
       box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
     }
 
     & .br{
@@ -333,14 +334,15 @@ html, body{
     // each column of description region
     .desc{
       display: flex;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
-
+      @include mobile {
+        font-size: 14px;
+      }
       div{
-        // flex: 1;
-        min-width: 350px;
+        // min-width: 350px;
         p:first-child {
           font-weight: bold;
         }
@@ -426,6 +428,7 @@ html, body{
         width: 350px;
         height: 400px;
         margin: 10px;
+        transform: translate3d(0.0, 0.0, 0.0);
       }
 
       .iosCard:hover{
@@ -540,7 +543,7 @@ html, body{
       .fullScreen{
         // expand the ios card
         cursor: pointer;
-        // height: 600px;
+
         width: 500px;
         height: auto;
 
@@ -551,8 +554,8 @@ html, body{
         // on small scrren,
         // take up full size
         @include mobile{
-          height: 100vh;
-          width: 100vw;
+          height: 100%;
+          width: 100%;
           overflow-y: hidden;
           margin: 0;
           padding: 0;
@@ -651,6 +654,7 @@ html, body{
 
 
     .panel1 {
+      color: black;
       background-image:url("assets/terrain.jpg");
       background-position: center;
       background-repeat: no-repeat;
@@ -872,7 +876,7 @@ html, body{
   	position:relative;
   	display:block;
   	margin-bottom:15px;
-  	// max-width:100%;
+
   	background:#eee;
   	height:35px;
   	@include border-radius(3px);
