@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One">
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
   <link rel="stylesheet" href="assets/libs/flickity.min.css">
-  <link rel="stylesheet" href="main.css">
-  <script async src="https://use.fontawesome.com/da0b9c6653.js"></script>
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  <script async src="https://use.fontawesome.com/da0b9c6653.js"></script>~
   <script async src="assets/libs/flickity.pkgd.min.js"></script>
 </head>
 
@@ -25,9 +25,9 @@
     <div id="header"> HAO'S PORTFOLIO </div>
     <div id="section">
       <div id="info">infomation</div>
-      <div id="contact">skills</div>
-      <div id="proj">interests</div>
-      <div id="fav">contacts</div>
+      <div id="skills">skills</div>
+      <div id="interests">interests</div>
+      <div id="contacts">contacts</div>
     </div>
 
   </div>
@@ -42,7 +42,7 @@
       <div>
         <div class="cardWrapper">
 
-          <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAiMAAAAJDFiYTBiZTE1LTE4ZWItNDZlMS1hYWIxLTBhNDc3OTNhYzQyNA.jpg" class="pic" />
+          <img src="assets/photo of me.jpg" class="pic" />
           <h1>
             Hao     Zhang
           </h1>
@@ -59,84 +59,90 @@
       </div>
 
       <div class="resumeWrapper">
-        <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "cellSelector": ".carousel-cell" }'>
+        <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay": false, "cellSelector": ".carousel-cell" }'>
           <div class="static-banner static-banner1"><a href="assets/HaoZhang_Resume.pdf"><i class="fa fa-file-text-o" aria-hidden="true"></i>    Resume</a>
           </div>
           <div class="carousel-cell" id="about">
-            <div class="header">
-              ABOUT ME
-              <div class="br"> </div>
+            <div class="cellContainer">
+              <div class="header">
+                ABOUT ME
+                <div class="br"> </div>
 
-            </div>
-            <div class="desc">
-              <p>I am currently a graduate student majored in CS at UIUC. Believing in programming is the closest thing we have to magic, and driven by my passion in web development. I am experienced as a programmer and equipped with technologies such as
-                AngularJS, React, NodeJS, WebGL, Three.js and jQuery, etc.</p>
-            </div>
-            <div class="social">
-              <a href="https://codepen.io/lucian33">
-                <i class="fa fa-codepen fa-3x" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/hao-zhang/">
-                <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-              </a>
-              <a href="https://github.com/lucian33">
-                <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
-              </a>
+              </div>
+              <div class="desc">
+                <p>I am currently a graduate student majored in CS at UIUC. Believing in programming is the closest thing we have to magic, and driven by my passion in web development. I am experienced as a programmer and equipped with technologies such as
+                  AngularJS, React, NodeJS, WebGL, Three.js and jQuery, etc.</p>
+              </div>
+              <div class="social">
+                <a href="https://codepen.io/lucian33">
+                  <i class="fa fa-codepen fa-3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/hao-zhang/">
+                  <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/lucian33">
+                  <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div class="carousel-cell" id="edu">
-            <div class="header">
-              EDUCATION
-              <div class="br"> </div>
-            </div>
-            <div class="desc">
-              <div>
-                <p>University of Illinois at Urbana Champaign</p>
-                <p><i>Master of Science in Computer Science</i></p>
-                <p><i></i></p>
-                <span>
-                  2018 - 2019
-                </span>
+            <div class="cellContainer">
+              <div class="header">
+                EDUCATION
+                <div class="br"> </div>
               </div>
-              <div>
-                <p>University of Illinois at Urbana Champaign</p>
-                <p><i>Master of Science in GIS</i></p>
-                <p><i>GPA: 3.96/4</i></p>
-                <span>
-                  2016 - 2017
-                </span>
-              </div>
-              <div>
-                <p>Zhejiang Agriculture & Forestry University</p>
-                <p><i>Bachelor of Science in GIS</i></p>
-                <span>
-                  2012 - 2016
-                </span>
-              </div>
+              <div class="desc">
+                <div>
+                  <p>University of Illinois at Urbana Champaign</p>
+                  <p><i>Master of Science in Computer Science</i></p>
+                  <p><i>GPA: 4.0/4.0</i></p>
+                  <span>
+                    2018 - 2019
+                  </span>
+                </div>
+                <div>
+                  <p>University of Illinois at Urbana Champaign</p>
+                  <p><i>Master of Science in GIS</i></p>
+                  <p><i>GPA: 3.96/4.0</i></p>
+                  <span>
+                    2016 - 2017
+                  </span>
+                </div>
+                <div>
+                  <p>Zhejiang Agriculture & Forestry University</p>
+                  <p><i>Bachelor of Science in GIS</i></p>
+                  <span>
+                    2012 - 2016
+                  </span>
+                </div>
 
+              </div>
             </div>
           </div>
           <div class="carousel-cell" id="experience">
-            <div class="header">
-              EXPERIENCE
-              <div class="br"> </div>
-            </div>
-            <div class="desc">
-              <div>
-                <h2><b>Gartner Inc.</b></h2>
-                <p>Web Development & <br> Data Visualiztion Intern</p>
-                <p>(Full Stack)</p>
-                <span>
-                  May 2017 - Jan 2018
-                </span>
+            <div class="cellContainer">
+              <div class="header">
+                EXPERIENCE
+                <div class="br"> </div>
               </div>
+              <div class="desc">
+                <div>
+                  <h2><b>Gartner Inc.</b></h2>
+                  <p>Web Development & <br> Data Visualiztion Intern</p>
+                  <p>(Full Stack)</p>
+                  <span>
+                    May 2017 - Jan 2018
+                  </span>
+                </div>
 
-              <div>
-                <p>Zhejiang Agriculture & Forestry University</p>
-                <p>Research Assistant</p>
-                <span>
-                  2012 - 2016
-                </span>
+                <div>
+                  <p>Zhejiang Agriculture & Forestry University</p>
+                  <p>Research Assistant</p>
+                  <span>
+                    2012 - 2016
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -144,7 +150,7 @@
       </div>
 
     </div>
-    <div class="contacts" id="contactArea">
+    <div class="skills" id="skillsArea">
 
       <div class="skillsHeader">
         <h1>SKILLS
@@ -256,7 +262,7 @@
 
 
     </div>
-    <div class="multiColumn" id="projArea">
+    <div class="interests" id="interestsArea">
       <div class="projectText">
         <h1>Interests<div class="br"></div></h1>
       </div>
@@ -486,7 +492,7 @@
         </div>
       </div>
     </div>
-    <div class="favorites" id="favArea">
+    <div class="contacts" id="contactsArea">
       <div class="">
         <div class="leftFooter">
           <div class="header">
