@@ -5,7 +5,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const copy = require('copy-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'public');
+const BUILD_DIR = path.resolve(__dirname, 'docs');
 const APP_DIR = path.resolve(__dirname, 'source');
 
 const config = {
