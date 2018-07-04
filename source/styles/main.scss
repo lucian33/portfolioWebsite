@@ -830,7 +830,7 @@ html, body{
   display: block !important;
 }
 
-.skills {
+#skillsArea {
 
   h1{
     font-size: 3rem;
@@ -847,6 +847,7 @@ html, body{
   justify-content: space-around;
   align-items: center;
   padding: 5%;
+  margin: 10px;
   background-color: ghostWhite;
   font-size: 1.3rem;
 
