@@ -280,6 +280,7 @@ html, body{
 
 // slides area for education and other information
 .main-carousel{
+
   color: black;
   text-align: left;
 
@@ -356,6 +357,12 @@ html, body{
   .dot{
     background: #fcc2cb;
   }
+
+  .carouselWrapper{
+    width: 100vw;
+    margin: 0 auto;
+  }
+
 }
 
 // hide button if on a touch device
