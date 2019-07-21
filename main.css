@@ -17,11 +17,6 @@ html, body {
   -webkit-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch; }
 
-.sepLine {
-  height: 1px;
-  color: red;
-  width: 100%; }
-
 .navBar {
   z-index: 3;
   position: fixed;
