@@ -117,14 +117,13 @@ html, body{
   }
   #section{
     font-size: 1.8rem;
-    // font-weight: bold;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-weight: bold;
     font-family: 'Poiret One', cursive;
-    // font-family: 'lato', sans-serif;
-    // margin-bottom: 5px;
+    margin: 10px;
+
     div {
       cursor: pointer;
     }
